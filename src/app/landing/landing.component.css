@@ -1,0 +1,67 @@
+.global_background {
+  background-image: url(../../assets/images/mongo-images/bgrn2.jpg);
+  background-position: center;
+  background-size: cover;
+  height: 100vh;
+  width: 100%;
+}
+
+.mongo-logo img{
+  width: 200px;
+  height: 60px;
+  margin-left: 40px;
+}
+
+.carousel-wrapper{
+  width: 50%;
+  margin: auto;
+}
+
+.title-wrapper{
+  font-size: 30px;
+  margin: 10px auto;
+  width: 70%;
+  text-align: center;
+}
+
+.description-wrapper{
+  font-size: 15px;
+  width: 60%;
+  margin: auto;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.background_image_one{
+  background-image: url(../../assets/images/mongo-images/image1.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 240px;
+  height: 250px;
+}
+
+.background_image_two{
+  background-image: url(../../assets/images/mongo-images/image2.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 240px;
+  height: 250px;
+}
+
+.background_image_three{
+  background-image: url(../../assets/images/mongo-images/image3.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 240px;
+  height: 250px;
+}
+
+.application-box{
+  text-align: center;
+}
+
+.button-wrapper{
+  display: inline-flex;
+  margin: 25px auto 40px auto;
+  width: 100%;
+}

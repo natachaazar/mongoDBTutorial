@@ -1,0 +1,16 @@
+<mat-sidenav-container>
+  <mat-sidenav #sidenav mode="side" opened [fixedInViewport]="true" [fixedTopGap]="0" [fixedBottomGap]="0">
+    <app-sidebar (eventEmitter)="onChangeSection($event)"></app-sidebar>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <ng-container *ngIf="route=='tutorial1'">
+      Test1
+    </ng-container>
+    <ng-container *ngIf="route=='tutorial2'">
+      Test2
+    </ng-container>
+    <ng-container *ngIf="route=='tutorial3'">
+      Test3
+    </ng-container>
+  </mat-sidenav-content>
+</mat-sidenav-container>

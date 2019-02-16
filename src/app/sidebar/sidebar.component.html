@@ -1,0 +1,10 @@
+<div class="sidebar-content">
+  <div class="logo-sidenav"></div>
+  <ng-container *ngFor="let menu of sideBar;let i=index;">
+    <div class="menu-item-div" (click)="changeSection(menu)">
+      <div class="menu-name-{{menu.selected}}">{{menu.title}}</div>
+      <div *ngIf="menu.selected" class="menu-dot"></div>
+    </div>
+    <div *ngIf="i!==sideBar.length-1" class="separator"></div>
+  </ng-container>
+</div>
