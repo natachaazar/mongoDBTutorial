@@ -13,12 +13,12 @@ export const Landing = {
 
 export const SideBar = [
   {
-    title: 'Tutorial',
+    title: 'Definition et Installation',
     route: 'tutorial1',
     selected:true
   },
   {
-    title: 'Tutorial 2',
+    title: 'Notions de collections',
     route: 'tutorial2',
     selected:false
   },

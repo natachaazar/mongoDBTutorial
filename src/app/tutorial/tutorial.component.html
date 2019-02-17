@@ -4,10 +4,80 @@
   </mat-sidenav>
   <mat-sidenav-content>
     <ng-container *ngIf="route=='tutorial1'">
-      Test1
+     <div class="section-title">Definition et Installation</div>
+      <div class="content-text">
+        Lorsque, comme beaucoup, on vient du monde des bases de données relationnelles et de la syntaxe SQL, l’apprentissage et
+        l’usage du noSQL est au début un peu déroutant.MongoDB est une base de données NoSQL relativement simple à prendre en main
+        et très riche fonctionnellement. Elle est orienté documents. Son nom vient de Humongous qui veut dire énorme ou immense. L'objectif
+        est donc de pouvoir gérer de grandes quantités de données. Comment ? Le moteur de base de données facilite l'extension (on parle
+        de scaling) si bien que l'on pourra supporter l'accroissement de la quantité de données par l'ajout de machines. A partir de
+        MongoDB, on peut construire des applications web destinées à une large audience.
+        <div class="question-div">
+          Orienté documents, qu'est ce que cela signifie?
+        </div>
+        <div class="reponse-div">
+          <div>
+            Dans un système de base de données relationnelles, les informations sont stockées par ligne dans des tables. Ces tables
+            sont mises en relation en utilisants des clés primaires et étrangères. Par exemple, prenons une base de données qui contient
+            des Acteurs et des Films et la table de jointure Acteur_Film qui permet d'associer les acteurs qui ont joué un rôle dans un film.
+          </div>
+          <div class="margin-top">
+            L'information est rangée dans des tables et si l'on souhaite récupérer le casting d'un film, il faut faire une requête SQL
+            avec des jointures pour récupérer les bonnes lignes des tables.
+          </div>
+          <div class="margin-top">
+            Dans MongoDb, l'information est modélisée sur un document au format JSON (Javascript Object Notation) (plus exactement BSON, une version binaire du JSON).
+            Ce format est detaillé dans la section 2 de ce tutoriel. Par exemple:
+          </div>
+          <div class="exemple-div margin-top">
+            <div>{{exemple1}}</div>
+            <div>{{exemple2}}</div>
+          </div>
+          <div class="margin-top">
+            Ici pas de jointure pour récupérer le casting d'un film, il suffit de lire le document qui nous intéresse.
+          </div>
+          <div class="margin-top">
+            Ceux qui viennent du monde des bases de données relationnelles sont peut être choqués de voir que les acteurs sont dupliqués.
+            Dans le monde NoSQL, on n'hésite pas à dénormaliser le schéma de la base de données pour favoriser les performances à la
+            lecture.  L'important est de savoir quelles requêtes seront faites pour décider du format des documents.
+          </div>
+        </div>
+      </div>
     </ng-container>
     <ng-container *ngIf="route=='tutorial2'">
-      Test2
+      <div class="section-title">Format JSON</div>
+      <div class="content-text">
+        Le JSON est devenu en quelques années un format très populaire sur Internet. Il permet de stocker les données avec les métadonnées
+        associées (les noms de colonnes). Un peu comme le XML mais dans un format plus compacte. Il est aujourd’hui utilisé dans nombre de
+        technologies web dérivées du Javascript (NodeJS, AngularJS, etc.).
+        Un document BSON étant similaire à un document JSON, vous en avez très certainement déjà vu… Il s’agit de ceci.
+        <div class="exemple-div margin-top">
+          {{exemple3}}
+        </div>
+        <div class="margin-top">
+          Comme vous pouvez les constater, on a donc des clefs et des valeurs et, tout comme en JSON (car c’est du JSON), une valeur peut être un
+        objet, un tableau, un tableau d’objets etc, ce sont des sous documents. Un document similaire à un object JavaScript, peut en contenur
+        d’autres.
+        </div>
+        <div class="margin-top">
+          Par ailleurs, les documents ne sont pas rigides. Ainsi, un document peut contenir un champ tandis que le suivant ne contient pas ce
+          dernier. Par exemple, dans le cas des utilisateurs d’un site, on pourrait connaître l’adresse de certains tandis qu’on l’ignore pour
+          d’autres. Dans ce cas, contrairement au SQL où le champ cerait vide, ici on peut tout simplement l’ommetre (ce qui n’empêchera pas de
+          l’ajouter par la suite).
+        </div>
+        <div class="question-div">
+         Quelle est alors "Une collection" dans MongoDB?
+        </div>
+        <div class="reponse-div">
+          <div>
+            Rien de sorcier et, vous l’aurez peut être déjà deviné, une collection est groupe de documents, similaire à une table dans le monde
+            du SQL. Vous aurez ainsi une collection regroupant les utilisateurs, une autre regroupant les articles etc.
+          </div>
+          <div class="exemple-div margin-top">
+            {{exemple4}}
+          </div>
+        </div>
+      </div>
     </ng-container>
     <ng-container *ngIf="route=='tutorial3'">
       Test3

@@ -5,7 +5,7 @@ import {Landing} from '../../assets/languages/global_file';
 @Component({
   selector: 'app-landing',
   templateUrl: './landing.component.html',
-  styleUrls: ['./landing.component.css']
+  styleUrls: ['./landing.component.scss']
 })
 export class LandingComponent implements OnInit {
   landingLanguage = Landing;
