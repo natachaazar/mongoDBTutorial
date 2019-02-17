@@ -4,29 +4,39 @@
   </mat-sidenav>
   <mat-sidenav-content>
     <ng-container *ngIf="route=='tutorial1'">
-     <div class="section-title">Definition et Installation</div>
+      <div class="section-title">Definition et Installation</div>
       <div class="content-text">
-        Lorsque, comme beaucoup, on vient du monde des bases de données relationnelles et de la syntaxe SQL, l’apprentissage et
-        l’usage du noSQL est au début un peu déroutant.MongoDB est une base de données NoSQL relativement simple à prendre en main
-        et très riche fonctionnellement. Elle est orienté documents. Son nom vient de Humongous qui veut dire énorme ou immense. L'objectif
-        est donc de pouvoir gérer de grandes quantités de données. Comment ? Le moteur de base de données facilite l'extension (on parle
-        de scaling) si bien que l'on pourra supporter l'accroissement de la quantité de données par l'ajout de machines. A partir de
+        Lorsque, comme beaucoup, on vient du monde des bases de données relationnelles et de la syntaxe SQL,
+        l’apprentissage et
+        l’usage du noSQL est au début un peu déroutant.MongoDB est une base de données NoSQL relativement simple à
+        prendre en main
+        et très riche fonctionnellement. Elle est orienté documents. Son nom vient de Humongous qui veut dire énorme ou
+        immense. L'objectif
+        est donc de pouvoir gérer de grandes quantités de données. Comment ? Le moteur de base de données facilite
+        l'extension (on parle
+        de scaling) si bien que l'on pourra supporter l'accroissement de la quantité de données par l'ajout de machines.
+        A partir de
         MongoDB, on peut construire des applications web destinées à une large audience.
         <div class="question-div">
           Orienté documents, qu'est ce que cela signifie?
         </div>
         <div class="reponse-div">
           <div>
-            Dans un système de base de données relationnelles, les informations sont stockées par ligne dans des tables. Ces tables
-            sont mises en relation en utilisants des clés primaires et étrangères. Par exemple, prenons une base de données qui contient
-            des Acteurs et des Films et la table de jointure Acteur_Film qui permet d'associer les acteurs qui ont joué un rôle dans un film.
+            Dans un système de base de données relationnelles, les informations sont stockées par ligne dans des tables.
+            Ces tables
+            sont mises en relation en utilisants des clés primaires et étrangères. Par exemple, prenons une base de
+            données qui contient
+            des Acteurs et des Films et la table de jointure Acteur_Film qui permet d'associer les acteurs qui ont joué
+            un rôle dans un film.
           </div>
           <div class="margin-top">
-            L'information est rangée dans des tables et si l'on souhaite récupérer le casting d'un film, il faut faire une requête SQL
+            L'information est rangée dans des tables et si l'on souhaite récupérer le casting d'un film, il faut faire
+            une requête SQL
             avec des jointures pour récupérer les bonnes lignes des tables.
           </div>
           <div class="margin-top">
-            Dans MongoDb, l'information est modélisée sur un document au format JSON (Javascript Object Notation) (plus exactement BSON, une version binaire du JSON).
+            Dans MongoDb, l'information est modélisée sur un document au format JSON (Javascript Object Notation) (plus
+            exactement BSON, une version binaire du JSON).
             Ce format est detaillé dans la section 2 de ce tutoriel. Par exemple:
           </div>
           <div class="exemple-div margin-top">
@@ -37,9 +47,11 @@
             Ici pas de jointure pour récupérer le casting d'un film, il suffit de lire le document qui nous intéresse.
           </div>
           <div class="margin-top">
-            Ceux qui viennent du monde des bases de données relationnelles sont peut être choqués de voir que les acteurs sont dupliqués.
-            Dans le monde NoSQL, on n'hésite pas à dénormaliser le schéma de la base de données pour favoriser les performances à la
-            lecture.  L'important est de savoir quelles requêtes seront faites pour décider du format des documents.
+            Ceux qui viennent du monde des bases de données relationnelles sont peut être choqués de voir que les
+            acteurs sont dupliqués.
+            Dans le monde NoSQL, on n'hésite pas à dénormaliser le schéma de la base de données pour favoriser les
+            performances à la
+            lecture. L'important est de savoir quelles requêtes seront faites pour décider du format des documents.
           </div>
         </div>
         <div class="subtitle-div">Installation</div>
@@ -66,13 +78,16 @@
           Pour le créer à l'emplacement par défaut, créez un répertoire dans / data / db (ou \ data \ db sous Windows).
         </div>
         <div class="margin-top">
-          Par défaut, le processus mongod (le processus daemon principal du système MongoDB) recherche le répertoire de données à ces
-          emplacements. Cependant, MongoDB vous offre la possibilité d’utiliser un autre emplacement. Si vous spécifiez un autre
+          Par défaut, le processus mongod (le processus daemon principal du système MongoDB) recherche le répertoire de
+          données à ces
+          emplacements. Cependant, MongoDB vous offre la possibilité d’utiliser un autre emplacement. Si vous spécifiez
+          un autre
           emplacement, vous devrez le définir comme paramètre au démarrage de MongoDB.
         </div>
         <div class="subtitle-div">Vérifier les autorisations</div>
         <div class="margin-top">
-          Une fois que vous avez créé le répertoire de données, vérifiez que le compte utilisateur qui exécute mongod dispose des
+          Une fois que vous avez créé le répertoire de données, vérifiez que le compte utilisateur qui exécute mongod
+          dispose des
           autorisations de lecture et d’écriture correspondantes.
         </div>
         <div class="subtitle-div">Demarrer MongoDB</div>
@@ -80,11 +95,13 @@
           Pour démarrer MongoDB, utilisez mongod (Linux / Mac) ou mongod.exe (Windows).
         </div>
         <div class="margin-top">
-          Cela suppose que le chemin a été ajouté à votre PATH. Si ce n'est pas le cas, vous devrez fournir le chemin complet du
+          Cela suppose que le chemin a été ajouté à votre PATH. Si ce n'est pas le cas, vous devrez fournir le chemin
+          complet du
           binaire Mongod.
         </div>
         <div class="margin-top">
-          Une fois que le processus mongod a démarré, vous devriez voir que le processus se lance sur le port 27017 qui est le port
+          Une fois que le processus mongod a démarré, vous devriez voir que le processus se lance sur le port 27017 qui
+          est le port
           par défaut utilisé par MongoDb. Un message d’attente de connexions dans la sortie de la
           console indiquant que le processus mongod a été exécuté avec succès (waiting for connections on port 27017).
         </div>
@@ -94,42 +111,52 @@
         </div>
         <div class="subtitle-div">Acceder à MongoDB</div>
         <div class="margin-top title-bigger-div">
-          Vous pouvez accéder à MongoDB via le shell MongoDB ou à partir de votre environnement de programmation à l'aide d'un
+          Vous pouvez accéder à MongoDB via le shell MongoDB ou à partir de votre environnement de programmation à
+          l'aide d'un
           pilote MongoDB.
         </div>
         <div class="margin-top">
-          Une fois que vous avez démarré une instance MongoDB (à l’aide de la commande mongod), vous pouvez maintenant vous connecter
+          Une fois que vous avez démarré une instance MongoDB (à l’aide de la commande mongod), vous pouvez maintenant
+          vous connecter
           à cette instance et commencer à utiliser MongoDB.
         </div>
         <div class="margin-top">
-          Vous pouvez utiliser le terminal ou l'invite de commande de votre ordinateur pour vous connecter et exécuter des commandes
+          Vous pouvez utiliser le terminal ou l'invite de commande de votre ordinateur pour vous connecter et exécuter
+          des commandes
           directement à partir du shell MongoDB.
         </div>
         <div class="margin-top">
-          Vous pouvez également vous connecter à une instance MongoDB en cours d'exécution via votre environnement de programmation
+          Vous pouvez également vous connecter à une instance MongoDB en cours d'exécution via votre environnement de
+          programmation
           à l'aide d'un pilote MongoDB.
         </div>
         <div class="subtitle-div">MongoDB Shell (mongo) et Connection à MongoDB</div>
         <div class="margin-top alert-div">
-          Tout au long de ce tutoriel, nous utiliserons le shell MongoDB (appelé mongo) pour se connecter à notre instance
+          Tout au long de ce tutoriel, nous utiliserons le shell MongoDB (appelé mongo) pour se connecter à notre
+          instance
           en cours d'exécution MongoDB.
         </div>
         <div class="margin-top">
-          Avant de pouvoir exécuter la moindre commande, il faut que la base de données soit lancée, cela se passe avec mongod
+          Avant de pouvoir exécuter la moindre commande, il faut que la base de données soit lancée, cela se passe avec
+          mongod
           (le d de dæmon) et se connecter au shell mongoDB, cela se passe avec mongo (le client).
         </div>
         <div class="margin-top">
-          Le shell mongo est une interface JavaScript interactive pour MongoDB et il est inclus dans le package MongoDB. Vous
-          pouvez utiliser le shell mongo pour interroger et mettre à jour des données, ainsi que pour exécuter des fonctions
+          Le shell mongo est une interface JavaScript interactive pour MongoDB et il est inclus dans le package MongoDB.
+          Vous
+          pouvez utiliser le shell mongo pour interroger et mettre à jour des données, ainsi que pour exécuter des
+          fonctions
           administratives.
         </div>
         <div class="margin-top">
-          Le shell MongoDB est situé au même endroit que les autres fichiers binaires. Pour l’exécuter, ouvrez une nouvelle fenêtre
+          Le shell MongoDB est situé au même endroit que les autres fichiers binaires. Pour l’exécuter, ouvrez une
+          nouvelle fenêtre
           de commandes / Terminal et entrez mongo (Linux / Mac) ou mongo.exe (Windows).Rien de bien complexe,
           comme avec MySQL, on demande à mongo de se connecter à la base.
         </div>
         <div class="margin-top alert-div">
-          Cela en supposant que le chemin a été ajouté à votre PATH. Si ce n'est pas le cas, vous devrez fournir le chemin complet.
+          Cela en supposant que le chemin a été ajouté à votre PATH. Si ce n'est pas le cas, vous devrez fournir le
+          chemin complet.
         </div>
         <div class="margin-top alert-div">
           Laissez cette fenêtre Terminal / Command ouverte en background. Si vous devez utiliser Terminal / Command pour
@@ -140,30 +167,38 @@
     <ng-container *ngIf="route=='tutorial2'">
       <div class="section-title">Format JSON</div>
       <div class="content-text">
-        Le JSON est devenu en quelques années un format très populaire sur Internet. Il permet de stocker les données avec les métadonnées
-        associées (les noms de colonnes). Un peu comme le XML mais dans un format plus compacte. Il est aujourd’hui utilisé dans nombre de
+        Le JSON est devenu en quelques années un format très populaire sur Internet. Il permet de stocker les données
+        avec les métadonnées
+        associées (les noms de colonnes). Un peu comme le XML mais dans un format plus compacte. Il est aujourd’hui
+        utilisé dans nombre de
         technologies web dérivées du Javascript (NodeJS, AngularJS, etc.).
         Un document BSON étant similaire à un document JSON, vous en avez très certainement déjà vu… Il s’agit de ceci.
         <div class="exemple-div margin-top">
           {{exemple3}}
         </div>
         <div class="margin-top">
-          Comme vous pouvez les constater, on a donc des clefs et des valeurs et, tout comme en JSON (car c’est du JSON), une valeur peut être un
-        objet, un tableau, un tableau d’objets etc, ce sont des sous documents. Un document similaire à un object JavaScript, peut en contenur
-        d’autres.
+          Comme vous pouvez les constater, on a donc des clefs et des valeurs et, tout comme en JSON (car c’est du
+          JSON), une valeur peut être un
+          objet, un tableau, un tableau d’objets etc, ce sont des sous documents. Un document similaire à un object
+          JavaScript, peut en contenur
+          d’autres.
         </div>
         <div class="margin-top">
-          Par ailleurs, les documents ne sont pas rigides. Ainsi, un document peut contenir un champ tandis que le suivant ne contient pas ce
-          dernier. Par exemple, dans le cas des utilisateurs d’un site, on pourrait connaître l’adresse de certains tandis qu’on l’ignore pour
-          d’autres. Dans ce cas, contrairement au SQL où le champ cerait vide, ici on peut tout simplement l’ommetre (ce qui n’empêchera pas de
+          Par ailleurs, les documents ne sont pas rigides. Ainsi, un document peut contenir un champ tandis que le
+          suivant ne contient pas ce
+          dernier. Par exemple, dans le cas des utilisateurs d’un site, on pourrait connaître l’adresse de certains
+          tandis qu’on l’ignore pour
+          d’autres. Dans ce cas, contrairement au SQL où le champ cerait vide, ici on peut tout simplement l’ommetre (ce
+          qui n’empêchera pas de
           l’ajouter par la suite).
         </div>
         <div class="question-div">
-         Quelle est alors "Une collection" dans MongoDB?
+          Quelle est alors "Une collection" dans MongoDB?
         </div>
         <div class="reponse-div">
           <div>
-            Rien de sorcier et, vous l’aurez peut être déjà deviné, une collection est groupe de documents, similaire à une table dans le monde
+            Rien de sorcier et, vous l’aurez peut être déjà deviné, une collection est groupe de documents, similaire à
+            une table dans le monde
             du SQL. Vous aurez ainsi une collection regroupant les utilisateurs, une autre regroupant les articles etc.
           </div>
           <div class="exemple-div margin-top">
@@ -173,7 +208,107 @@
       </div>
     </ng-container>
     <ng-container *ngIf="route=='tutorial3'">
-      Test3
+      <div class="section-title">Commandes Essentielles</div>
+      <div class="content-text">
+        <div class="subtitle-div">Afficher toutes les base de données</div>
+        <div class="reponse-div">show dbs</div>
+        <div class="example-image-div margin-top"><img src="assets/images/mongo-images/showDB.PNG"></div>
+
+        <div class="subtitle-div">Utiliser la base "newbase"</div>
+        <div class="reponse-div">use newbase</div>
+        <div class="example-image-div margin-top"><img src="assets/images/mongo-images/useDB.PNG"></div>
+
+        <div class="subtitle-div">Voir dans quelle base on est</div>
+        <div class="reponse-div">db</div>
+
+        <div class="subtitle-div">Afficher les collections de la base</div>
+        <div class="reponse-div">show collections</div>
+        <div class="example-image-div margin-top"><img src="assets/images/mongo-images/showcollections.png"></div>
+
+        <div class="subtitle-div">Créer une collection</div>
+        <div class="reponse-div">db.createCollection("Nom Collection");</div>
+
+        <div class="subtitle-div">Renommer une collection</div>
+        <div class="reponse-div">db.(nom collection).renameCollection("nouveau nom")</div>
+        <div class="example-image-div margin-top"><img src="assets/images/mongo-images/renameColl.png"></div>
+
+        <div class="subtitle-div">Effacer une collection</div>
+        <div class="reponse-div">db.(nom collection).drop()</div>
+
+        <div class="subtitle-div">Effacer la base dans laquelle on est</div>
+        <div class="reponse-div">db.dropDatabase()</div>
+
+        <div class="subtitle-div">Insertion dans la collection</div>
+        <div class="reponse-div">
+          <div>{{insert}}</div>
+          <div>{{insertMany}}</div>
+        </div>
+
+        <div class="subtitle-div">Obtenir le nombre de records dans une collection</div>
+        <div class="reponse-div">db.(nom collection).count()</div>
+
+        <div class="subtitle-div">Selection de la collection</div>
+        <div class="reponse-div">
+          <div>{{selection1}}</div>
+          <div>db.contacts.find().pretty()</div>
+          <div>{{selection}}.pretty()</div>
+          <div class="alert-div">On Utilise .pretty() avec la command find() pour ajuster la form JSOn des documents
+            pour pouvoir les lires
+          </div>
+        </div>
+
+        <div class="subtitle-div">Effacer tous les documents d'une collection</div>
+        <div class="reponse-div">{{removeAll}}</div>
+
+        <div class="subtitle-div">Effacer un document d'une collection</div>
+        <div class="reponse-div">{{effacerUn}}</div>
+        <div class="example-image-div margin-top"><img src="assets/images/mongo-images/removeOne.png"></div>
+
+        <div class="subtitle-div">Mettre à jour une collection</div>
+        <div class="reponse-div">
+          <div>{{mettreAJou4}}</div>
+          <div>{{mettreAJour}}</div>
+          <div>{{mettreAJour2}} Pour remplacer le record avec un autre representant par l'obj JSON</div>
+          <div>{{mettreAJou3}} Pour mettre a jour tous les records ayant cette condition</div>
+        </div>
+        <div class="alert-div">$set est utilisé pour modifier certain attributs d'un record de la collection. C'est une
+          des aggregation dans MongoDb
+        </div>
+        <div class="alert-div">upsert:true est l'une des options de la commande update pour indiquer que si ce record
+          n'existe pas je voudrais le créer
+        </div>
+        <div class="alert-div">new:true est l'une des options de la commande update pour indiquer que je veux retourner
+          le nouveau document
+        </div>
+
+        <div class="subtitle-div">Statistiques d'une collection</div>
+        <div class="reponse-div">
+          <div>db.(nom collection).stats()</div>
+          <div>db.(nom collection).latencyStats()</div>
+          <div>db.(nom collection).dataSize()</div>
+          <div>db.(nom collection).storageSize()</div>
+          <div>db.(nom collection).totalSize()</div>
+          <div>db.(nom collection).totalIndexSize ()</div>
+        </div>
+        <div class="example-image-div margin-top"><img style="width: 100%" src="assets/images/mongo-images/stats.png"></div>
+
+        <div class="subtitle-div">Import/Export d'une base de donnée</div>
+        <div class="alert-div">Ces Commandes s'utilisent sans la commande "mongo".
+          Pour les executer il faut ouvrir une nouvelle fenetre de commande</div>
+        <div class="reponse-div">
+          <div>mongodump --host localhost --port 27017 --db (Nom de base de données) --out (Nom du fichier pour exporter les données)</div>
+          <div>mongorestore --host localhost -d (Nom de base de données) (le path du fichier contenant les données exportés)</div>
+          </div>
+        <div class="margin-top title-bigger-div">
+          Il est assez lourd de devoir taper à chaque fois db.(nom collection).commande, la console Mongo est aussi un
+          shell JavaScript, il est donc tout
+          à fait possible d’enregistrer des choses dans des variables !
+        </div>
+        <div class="reponse-div">
+          <div>t = db.(nom collection)</div>
+          <div>t.find().pretty()</div>
+        </div>
+      </div>
     </ng-container>
   </mat-sidenav-content>
 </mat-sidenav-container>

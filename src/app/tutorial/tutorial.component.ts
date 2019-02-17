@@ -26,7 +26,7 @@ export class TutorialComponent implements OnInit {
     '        "likedByUser": true\n' +
     '        }\n' +
     '        }';
-  exemple4:string='{\n' +
+  exemple4: string = '{\n' +
     '    "_id": "558d0b395fa02e7e218b458c",\n' +
     '    "firstname": "Morgan",\n' +
     '    "lastname": "Haraki",\n' +
@@ -43,7 +43,17 @@ export class TutorialComponent implements OnInit {
     '    "firstname": "Jérôme",\n' +
     '    "lastname": "Lecomte",\n' +
     '    "mutualFriends": 23\n' +
-    '}'
+    '}';
+  insert: string = 'db.(nom collection).insert({attribut1: \'Quentin\', attribut2: \'Busuttil\'})';
+  insertMany: string = 'db.(nom collection).insert([{attribut1: \'Quentin\', attribut2: \'Busuttil\'},{attribut1: \'Value1\', attribut2: \'Value2\'}])';
+  selection1: string = 'db.contacts.find({condition})';
+  selection: string = 'db.contacts.find({ attribut1: \'quentin\', attribut2: \'busuttil\' })';
+  removeAll: string = 'db.(nom collection).remove({condition})';
+  effacerUn: string = 'db.(nom collection).remove({attribut1:\'Quentin\'})';
+  mettreAJour: string = 'db.(nom collection).update({attribut1:x}, { $set: { "attribut2": "Nouveau Nom" }},{new:true, upsert:true})';
+  mettreAJou3: string = 'db.(nom collection).updateMany({attribut1:x}, { $set: { "attribut2": "Nouveau Nom" } })';
+  mettreAJou4: string = 'db.(nom collection).update({condition}, {remplacer avec}, {options})';
+  mettreAJour2: string = 'db.(nom collection).update({ attribut1: \'x\' }, obj)';
 
   constructor() {
   }

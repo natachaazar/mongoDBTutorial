@@ -23,7 +23,7 @@ export const SideBar = [
     selected:false
   },
   {
-    title: 'Tutorial 3',
+    title: 'Commandes Essentielles',
     route: 'tutorial3',
     selected:false
   },
