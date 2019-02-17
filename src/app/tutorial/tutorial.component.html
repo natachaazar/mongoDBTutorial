@@ -42,6 +42,99 @@
             lecture.  L'important est de savoir quelles requêtes seront faites pour décider du format des documents.
           </div>
         </div>
+        <div class="subtitle-div">Installation</div>
+        <div>
+          Le site Web MongoDB comprend des instructions d’installation pour Windows, Mac et Linux. Les voici:
+        </div>
+        <div class="margin-top">
+          <a href="https://docs.mongodb.com/manual/tutorial/install-mongodb-on-windows/">Installation sur Windows</a>
+        </div>
+        <div class="margin-top">
+          <a href="https://docs.mongodb.com/manual/tutorial/install-mongodb-on-os-x/">Installation sur Mac</a>
+        </div>
+        <div class="margin-top">
+          <a href="https://docs.mongodb.com/manual/administration/install-on-linux/">Installation sur Linux</a>
+        </div>
+        <div class="subtitle-div">Créer le répertoire de données</div>
+        <div class="margin-top">
+          Cette information est incluse dans les liens d'installation ci-dessus.
+        </div>
+        <div class="margin-top">
+          MongoDB stocke ses données dans un répertoire de données. Vous devez créer ce répertoire de données.
+        </div>
+        <div class="margin-top">
+          Pour le créer à l'emplacement par défaut, créez un répertoire dans / data / db (ou \ data \ db sous Windows).
+        </div>
+        <div class="margin-top">
+          Par défaut, le processus mongod (le processus daemon principal du système MongoDB) recherche le répertoire de données à ces
+          emplacements. Cependant, MongoDB vous offre la possibilité d’utiliser un autre emplacement. Si vous spécifiez un autre
+          emplacement, vous devrez le définir comme paramètre au démarrage de MongoDB.
+        </div>
+        <div class="subtitle-div">Vérifier les autorisations</div>
+        <div class="margin-top">
+          Une fois que vous avez créé le répertoire de données, vérifiez que le compte utilisateur qui exécute mongod dispose des
+          autorisations de lecture et d’écriture correspondantes.
+        </div>
+        <div class="subtitle-div">Demarrer MongoDB</div>
+        <div class="margin-top">
+          Pour démarrer MongoDB, utilisez mongod (Linux / Mac) ou mongod.exe (Windows).
+        </div>
+        <div class="margin-top">
+          Cela suppose que le chemin a été ajouté à votre PATH. Si ce n'est pas le cas, vous devrez fournir le chemin complet du
+          binaire Mongod.
+        </div>
+        <div class="margin-top">
+          Une fois que le processus mongod a démarré, vous devriez voir que le processus se lance sur le port 27017 qui est le port
+          par défaut utilisé par MongoDb. Un message d’attente de connexions dans la sortie de la
+          console indiquant que le processus mongod a été exécuté avec succès (waiting for connections on port 27017).
+        </div>
+        <div class="margin-top alert-div">
+          Laissez cette fenêtre Terminal / Command ouverte en background. Si vous devez utiliser Terminal / Command pour
+          toute autre tâche (telle que l'exécution du shell MongoDB), ouvrez une nouvelle fenêtre.
+        </div>
+        <div class="subtitle-div">Acceder à MongoDB</div>
+        <div class="margin-top title-bigger-div">
+          Vous pouvez accéder à MongoDB via le shell MongoDB ou à partir de votre environnement de programmation à l'aide d'un
+          pilote MongoDB.
+        </div>
+        <div class="margin-top">
+          Une fois que vous avez démarré une instance MongoDB (à l’aide de la commande mongod), vous pouvez maintenant vous connecter
+          à cette instance et commencer à utiliser MongoDB.
+        </div>
+        <div class="margin-top">
+          Vous pouvez utiliser le terminal ou l'invite de commande de votre ordinateur pour vous connecter et exécuter des commandes
+          directement à partir du shell MongoDB.
+        </div>
+        <div class="margin-top">
+          Vous pouvez également vous connecter à une instance MongoDB en cours d'exécution via votre environnement de programmation
+          à l'aide d'un pilote MongoDB.
+        </div>
+        <div class="subtitle-div">MongoDB Shell (mongo) et Connection à MongoDB</div>
+        <div class="margin-top alert-div">
+          Tout au long de ce tutoriel, nous utiliserons le shell MongoDB (appelé mongo) pour se connecter à notre instance
+          en cours d'exécution MongoDB.
+        </div>
+        <div class="margin-top">
+          Avant de pouvoir exécuter la moindre commande, il faut que la base de données soit lancée, cela se passe avec mongod
+          (le d de dæmon) et se connecter au shell mongoDB, cela se passe avec mongo (le client).
+        </div>
+        <div class="margin-top">
+          Le shell mongo est une interface JavaScript interactive pour MongoDB et il est inclus dans le package MongoDB. Vous
+          pouvez utiliser le shell mongo pour interroger et mettre à jour des données, ainsi que pour exécuter des fonctions
+          administratives.
+        </div>
+        <div class="margin-top">
+          Le shell MongoDB est situé au même endroit que les autres fichiers binaires. Pour l’exécuter, ouvrez une nouvelle fenêtre
+          de commandes / Terminal et entrez mongo (Linux / Mac) ou mongo.exe (Windows).Rien de bien complexe,
+          comme avec MySQL, on demande à mongo de se connecter à la base.
+        </div>
+        <div class="margin-top alert-div">
+          Cela en supposant que le chemin a été ajouté à votre PATH. Si ce n'est pas le cas, vous devrez fournir le chemin complet.
+        </div>
+        <div class="margin-top alert-div">
+          Laissez cette fenêtre Terminal / Command ouverte en background. Si vous devez utiliser Terminal / Command pour
+          toute autre tâche ouvrez une nouvelle fenêtre.
+        </div>
       </div>
     </ng-container>
     <ng-container *ngIf="route=='tutorial2'">

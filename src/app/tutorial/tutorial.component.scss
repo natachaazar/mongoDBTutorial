@@ -14,7 +14,7 @@
   background-color: #499b45;
   font-size: 18px;
   width: 100%;
-  margin-top: 30px;
+  margin-top: 20px;
   padding: 20px;
 }
 .reponse-div{
@@ -32,4 +32,16 @@
   color: #ffffff;
   padding:10px;
   white-space:pre-wrap;
+}
+.subtitle-div{
+  color: #499b45;
+  font-size: 18px;
+  text-decoration: underline;
+  margin-top: 10px;
+}
+.alert-div{
+  color: red;
+}
+.title-bigger-div{
+  font-size: 18px;
 }
