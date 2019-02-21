@@ -46,7 +46,7 @@ export class TutorialComponent implements OnInit {
     '}';
   insert: string = 'db.(nom collection).insert({attribut1: \'Quentin\', attribut2: \'Busuttil\'})';
   insertMany: string = 'db.(nom collection).insert([{attribut1: \'Quentin\', attribut2: \'Busuttil\'},{attribut1: \'Value1\', attribut2: \'Value2\'}])';
-  selection1: string = 'db.contacts.find({condition})';
+  selection1: string = 'db.contacts.find({condition},{projection},{options})';
   selection: string = 'db.contacts.find({ attribut1: \'quentin\', attribut2: \'busuttil\' })';
   removeAll: string = 'db.(nom collection).remove({condition})';
   effacerUn: string = 'db.(nom collection).remove({attribut1:\'Quentin\'})';
@@ -64,7 +64,8 @@ export class TutorialComponent implements OnInit {
   exempleIndex6: string = 'db.collection.dropIndexes()';
   exempleIndex7: string = 'db.getCollectionNames().forEach(function(collection) {\n' +
     '   db[collection].dropIndexes();\n' +
-    '});'
+    '});';
+  sortExemple1:string='db.(nom collection).find({condition}).sort({"attribut1":1}).pretty()';
 
   constructor() {
   }

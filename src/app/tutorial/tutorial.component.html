@@ -332,50 +332,63 @@
       <div class="content-text">
         <div class="subtitle-div">Les Dates</div>
         <div class="margin-top">
-          Lorsque l’on veut requêter une date dans Mongo, il faut créer un objet de type Date. Cela se fait soit directement via le constructeur
+          Lorsque l’on veut requêter une date dans Mongo, il faut créer un objet de type Date. Cela se fait soit
+          directement via le constructeur
           Date de JavaScript, soit via le wrapper Mongo ISODate.
         </div>
         <div class="margin-top">
-          La fonction Date() appelée sans new retourne simplement la date courante en tant que chaine de caractères. Les autres formes,
-          c’est à dire new Date(xxx), new ISODate(xxx) et ISODate(xxx) sont équivalentes et font toutes appel au wrapper ISODate. Il ne s’agit
+          La fonction Date() appelée sans new retourne simplement la date courante en tant que chaine de caractères. Les
+          autres formes,
+          c’est à dire new Date(xxx), new ISODate(xxx) et ISODate(xxx) sont équivalentes et font toutes appel au wrapper
+          ISODate. Il ne s’agit
           donc que d’une question de préférence personnelle.
         </div>
         <div class="margin-top">
-          Maintenant que nous avons levé l’ambiguïté qu’il peut y avoir entre ces différentes méthodes, utilisons-les. Pour l’exemple, nous
+          Maintenant que nous avons levé l’ambiguïté qu’il peut y avoir entre ces différentes méthodes, utilisons-les.
+          Pour l’exemple, nous
           allons récupérer les utilisateurs créés depuis le 15 septembre 2015.
         </div>
         <div class="margin-top exemple-div">
           {{exempleDate}}
         </div>
         <div class="margin-top">
-          Évidemment, qui dit date dit aussi heure. Franchissons le cap de la précision, les utilisateurs qui se sont enregistrés après le
+          Évidemment, qui dit date dit aussi heure. Franchissons le cap de la précision, les utilisateurs qui se sont
+          enregistrés après le
           15 septembre 2015 à 13h20.
         </div>
         <div class="margin-top exemple-div">
           {{exempleDate2}}
         </div>
         <div class="margin-top">
-          Vous vous apercevez certainement que la précision va jusqu’à la milliseconde… En effet, le moteur de Mongo stocke et traite les dates
-          en nombre de millisecondes depuis l’époque Unix (sous la forme d’un entier de 64 bits, si ça vous intéresse). Nous héritons donc de
+          Vous vous apercevez certainement que la précision va jusqu’à la milliseconde… En effet, le moteur de Mongo
+          stocke et traite les dates
+          en nombre de millisecondes depuis l’époque Unix (sous la forme d’un entier de 64 bits, si ça vous intéresse).
+          Nous héritons donc de
           la précision de ce format.
         </div>
         <div class="margin-top">
-          Vous notez peut-être également que deux lettres viennent s’ajouter à notre équation. Le T vient simplement faire office de séparateur
-          et indique Time, tandis que le Z signifie que nous traitons du temps en Zulu Time [en], autrement dit, l’heure UTC.
+          Vous notez peut-être également que deux lettres viennent s’ajouter à notre équation. Le T vient simplement
+          faire office de séparateur
+          et indique Time, tandis que le Z signifie que nous traitons du temps en Zulu Time [en], autrement dit, l’heure
+          UTC.
         </div>
         <div class="margin-top">
-          La présence ou l’absence du Z est importante. Mongo stocke dans tous les cas la date au format UTC. Cependant, si vous omettez le
-          Z, Mongo considère qu’il s’agit du fuseau horaire courant, donc UTC+1 si vous êtes sur le fuseau horaire de Paris, ou plus
+          La présence ou l’absence du Z est importante. Mongo stocke dans tous les cas la date au format UTC. Cependant,
+          si vous omettez le
+          Z, Mongo considère qu’il s’agit du fuseau horaire courant, donc UTC+1 si vous êtes sur le fuseau horaire de
+          Paris, ou plus
           généralement CET (Central European Time), autrement dit l’heure d’Europe Centrale.
         </div>
         <div class="margin-top">
-          Vous le comprenez, en l’absence du Z, Mongo fera l’opération pour ajouter ou retrancher des heures à UTC avant de la stocker,
+          Vous le comprenez, en l’absence du Z, Mongo fera l’opération pour ajouter ou retrancher des heures à UTC avant
+          de la stocker,
           tandis que si vous le préciser, il stocke tel quel.
         </div>
 
-        <div class="subtitle-div">Index</div>
+        <div class="subtitle-div">Les Indexes</div>
         <div class="margin-top">
-          Comme dans MySQL, les index permettent d’accélérer les requêtes en évitant au moteur de base de données de devoir scanner tous
+          Comme dans MySQL, les index permettent d’accélérer les requêtes en évitant au moteur de base de données de
+          devoir scanner tous
           les documents de la collection afin de trouver ceux correspondant à la requête.
         </div>
         <div class="margin-top">
@@ -388,8 +401,10 @@
           {{exempleIndex2}} Pour créer un index et préciser que la valeur doit être unique
         </div>
         <div class="margin-top">
-          L’index ci-dessus considérera une absence de valeur comme une valeur. Il n’y a donc qu’un email qui pourra être vide ensuite
-          mongo considérera les autres email sans valeur comme dupliqués et refusera de les ajouter. Pour empêcher ce comportement, on peut
+          L’index ci-dessus considérera une absence de valeur comme une valeur. Il n’y a donc qu’un email qui pourra
+          être vide ensuite
+          mongo considérera les autres email sans valeur comme dupliqués et refusera de les ajouter. Pour empêcher ce
+          comportement, on peut
           utiliser l’option sparse.
         </div>
         <div class="exemple-div margin-top">
@@ -409,6 +424,32 @@
         </div>
         <div class="margin-top exemple-div">
           {{exempleIndex7}} Pour supprimer tous les indexes de la base
+        </div>
+        <div class="subtitle-div">Les Projections</div>
+        <div class="margin-top">
+          La projection permet de sélectionner les informations à renvoyer. Si, par exemple, je m’intéresse uniquement
+          au titre du film, à son
+          année de sortie et aux noms des acteurs, je vais limiter les informations retournées en précisant les champs
+          souhaités dans un document
+          JSON (toujours ce fameux JSON). Et, également passer ce document comme deuxième argument de ma recherche find.
+        </div>
+        <div class="example-image-div margin-top"><img src="assets/images/mongo-images/projection1.PNG"></div>
+        <div class="margin-top">
+          Pour conserver un champ, il suffit de le préciser dans ce document et de lui affecter la valeur 1.
+          Les plus attentifs d’entre vous auront noté que la requête a renvoyé également le champ _id. C’est le
+          fonctionnement normal de la commande find qui renvoie systématiquement la clé du document.
+          Si l’on souhaite l’exclure, il faut le préciser dans la commande.
+        </div>
+        <div class="example-image-div margin-top"><img src="assets/images/mongo-images/projection2.PNG"></div>
+
+        <div class="subtitle-div">Le Tirage des Resultats</div>
+        <div class="margin-top">
+          Quand les recherches renvoient beaucoup de documents, il peut être utile de les trier.
+          On dispose pour cela de la fonction sort qui va permettre de trier les résultats sur un champ par ordre
+          croissant ou décroissant. On pourra aussi utiliser sort comme une option dans la requête find.
+        </div>
+        <div class="margin-top exemple-div">
+          {{sortExemple1}} Pour trier les documents dans un ordre croissant selon l'attribut 1 de la collection. (-1 Pour un ordre descendant)
         </div>
       </div>
     </ng-container>
