@@ -14,7 +14,7 @@ export class SidebarComponent implements OnInit{
 	constructor() {}
 
 	ngOnInit() {
-    this.eventEmitter.emit(this.sideBar[3]);
+    this.eventEmitter.emit(this.sideBar[0]);
 	}
 
   changeSection(section){

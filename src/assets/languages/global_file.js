@@ -33,13 +33,18 @@ export const SideBar = [
     selected:false
   },
   {
-    title: 'Tutorial 5',
+    title: 'Critères de recherche',
     route: 'tutorial5',
     selected:false
   },
   {
-    title: 'Tutorial 6',
+    title: 'Les Aggregations',
     route: 'tutorial6',
+    selected:false
+  },
+  {
+    title: 'Administration',
+    route: 'tutorial7',
     selected:false
   }
 ];

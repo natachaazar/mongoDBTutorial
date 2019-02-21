@@ -65,7 +65,23 @@ export class TutorialComponent implements OnInit {
   exempleIndex7: string = 'db.getCollectionNames().forEach(function(collection) {\n' +
     '   db[collection].dropIndexes();\n' +
     '});';
-  sortExemple1:string='db.(nom collection).find({condition}).sort({"attribut1":1}).pretty()';
+  sortExemple1: string = 'db.(nom collection).find({condition}).sort({"attribut1":1}).pretty()';
+  sortExemple2: string = 'db.(nom collection).find({condition},{projection},{sort:{"attribut1":1}}).pretty()';
+  limitExample1: string = 'db.(nom collection).find({condition}).limit(5)';
+  limitExample2: string = 'db.(nom collection).find({condition},{projection},{limit:5}).pretty()';
+  criteresExemple: string = 'db.produits.find({dixmill:9999})';
+  gt: string = 'db.(nom collection).find({année:{$gt:2012}}).pretty()';
+  lt: string = 'db.(nom collection).find({année:{$lt:2012}}).pretty()';
+  gte: string = 'db.(nom collection).find({année:{$gte:2012}}).pretty()';
+  lte: string = 'db.(nom collection).find({année:{$lte:2012}}).pretty()';
+  or: string = 'db.(nom collection).find({$or:[{année:2012},{année:2013}]}).pretty()';
+  and: string = 'db.(nom collection).find({$and:[{année:2012},{couleur:rouge}]}).pretty()';
+  inCritere: string = 'db.(nom collection).find({ language: { $in: [\'anglais\', \'francais\'] }).pretty()';
+  exists: string = 'db.(nom collection).find({language:{$exists:true}}).pretty()';
+  regex: string = 'db.(nom collection).find({telephone:{$regex:\'/789$/\'}}).pretty()';
+  type: string = 'db.(nom collection).find({nom:{$type:"string"}}).pretty()';
+  all: string = 'db.(nom collection).find({ tags: { $all: [\'ssl\', \'security\'] }).pretty()';
+  allSimilar: string = 'db.(nom collection).find({ $and: [ { tags: "ssl" }, { tags: "security" } ] }).pretty()';
 
   constructor() {
   }

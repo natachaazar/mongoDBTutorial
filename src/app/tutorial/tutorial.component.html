@@ -442,15 +442,100 @@
         </div>
         <div class="example-image-div margin-top"><img src="assets/images/mongo-images/projection2.PNG"></div>
 
-        <div class="subtitle-div">Le Tirage des Resultats</div>
+        <div class="subtitle-div">Le Triage des Resultats</div>
         <div class="margin-top">
           Quand les recherches renvoient beaucoup de documents, il peut être utile de les trier.
           On dispose pour cela de la fonction sort qui va permettre de trier les résultats sur un champ par ordre
           croissant ou décroissant. On pourra aussi utiliser sort comme une option dans la requête find.
         </div>
         <div class="margin-top exemple-div">
-          {{sortExemple1}} Pour trier les documents dans un ordre croissant selon l'attribut 1 de la collection. (-1 Pour un ordre descendant)
+          {{sortExemple1}} Pour trier les documents dans un ordre croissant selon l'attribut 1 de la collection. (-1
+          Pour un ordre descendant)
         </div>
+        <div class="margin-top exemple-div">
+          {{sortExemple2}} sort dans les options de la commande find()
+        </div>
+        <div class="subtitle-div">La Limitation des Resultats</div>
+        <div class="margin-top">
+          Quand les recherches renvoient beaucoup de documents, il peut être utile de les limiter et surtout en cas de
+          pagination des données.
+          On dispose pour cela de la fonction limit qui va permettre de limiter les résultats.
+          On pourra aussi utiliser limit comme une option dans la requête find.
+        </div>
+        <div class="margin-top exemple-div">
+          {{limitExample1}} Pour limiter les documents retourneés à 5.
+        </div>
+        <div class="margin-top exemple-div">
+          {{limitExample2}} limit dans les options de la commande find().
+        </div>
+      </div>
+    </ng-container>
+    <ng-container *ngIf="route=='tutorial5'">
+      <div class="section-title">Critères de recherche</div>
+      <div class="content-text">
+        La méthode find prend pour premier paramètre un objet JSON qu'elle va prendre comme critère de recherche.
+        <div class="margin-top">
+          Si par exemple vous faites
+        </div>
+        <div class="margin-top exemple-div">
+          {{criteresExemple}}
+        </div>
+        <div class="margin-top">
+          Vous allez avoir tous les documents qui correspondent à dixmill = 99999. En SQL, cela revient à faire une
+          requête avec une clause where.
+        </div>
+        <div class="margin-top title-bigger-div">
+          On peut aller plus loin sur le critère de recherches en ajoutant des opérandes :
+        </div>
+        <div class="subtitle-div">$gt : plus grand que</div>
+        <div class="reponse-div">{{gt}}</div>
+
+        <div class="subtitle-div">$lt : plus petit que</div>
+        <div class="reponse-div">{{lt}}</div>
+
+        <div class="subtitle-div">$gte : plus grand ou égal à</div>
+        <div class="reponse-div">{{gte}}</div>
+
+        <div class="subtitle-div">$lte: plus petit ou égal à</div>
+        <div class="reponse-div">{{lte}}</div>
+
+        <div class="margin-top alert-div">
+          Les 4 opérandes ci-dessus fonctionnent pour des nombres et des chaines de caractères. Pour les chaines de
+          caractères, l'ordre appliqué est l'ordre alphabétique.
+        </div>
+
+        <div class="subtitle-div">$or : pour récupérer les documents qui correspondent à 2 critères différents</div>
+        <div class="reponse-div">{{or}}</div>
+
+        <div class="subtitle-div">$and : pour cumuler des critères</div>
+        <div class="reponse-div">{{and}}</div>
+
+        <div class="subtitle-div">$in : pour récuperer les documents parmi le tableau des valeurs</div>
+        <div class="reponse-div">{{inCritere}}</div>
+
+        <div class="subtitle-div">$exist : pour récuperer les documents qui ont le critère qui existe et non null</div>
+        <div class="reponse-div">{{exists}}</div>
+
+        <div class="subtitle-div">$regex : pour récuperer les documents qui ont le critère correspondant à l'expression régulière donnée</div>
+        <div class="reponse-div">{{regex}}</div>
+
+        <div class="subtitle-div">$all : pour cumuler des critères correspondant au tableau des valeurs.</div>
+        <div class="reponse-div">{{all}}</div>
+        <div class="alert-div margin-top">
+          Cet operand resssemble à l'operand $and mais avec les mêmes critères, par exemple:
+        </div>
+        <div class="reponse-div">
+          {{allSimilar}}
+        </div>
+
+        <div class="subtitle-div">$type : pour récuperer les documents qui ont le critère correspondant à un type donné</div>
+        <div class="reponse-div">{{type}}</div>
+
+        <div class="title-bigger-div margin-top">
+          Les Types disponibles dans Mongo DB sont:
+        </div>
+        <div class="example-image-div margin-top"><img src="assets/images/mongo-images/types1.PNG"></div>
+        <div class="example-image-div margin-top"><img src="assets/images/mongo-images/types2.PNG"></div>
       </div>
     </ng-container>
   </mat-sidenav-content>
