@@ -54,6 +54,17 @@ export class TutorialComponent implements OnInit {
   mettreAJou3: string = 'db.(nom collection).updateMany({attribut1:x}, { $set: { "attribut2": "Nouveau Nom" } })';
   mettreAJou4: string = 'db.(nom collection).update({condition}, {remplacer avec}, {options})';
   mettreAJour2: string = 'db.(nom collection).update({ attribut1: \'x\' }, obj)';
+  exempleDate: string = 'db.users.find({ signupDate: { $gte: ISODate("2015-09-15") } })';
+  exempleDate2: string = 'db.users.find({ signupDate: { $gte: ISODate("2015-09-15T13:20:00.000Z") } })';
+  exempleIndex1: string = 'db.users.createIndex({ username: 1 })';
+  exempleIndex2: string = 'db.users.createIndex({ email: 1 }, { unique: true })';
+  exempleIndex3: string = 'db.users.createIndex({ email: 1 }, { unique: true, sparse: true })';
+  exempleIndex4: string = 'db.collection.getIndexes()';
+  exempleIndex5: string = 'db.collection.dropIndex("indexName")';
+  exempleIndex6: string = 'db.collection.dropIndexes()';
+  exempleIndex7: string = 'db.getCollectionNames().forEach(function(collection) {\n' +
+    '   db[collection].dropIndexes();\n' +
+    '});'
 
   constructor() {
   }

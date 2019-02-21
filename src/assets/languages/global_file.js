@@ -28,7 +28,7 @@ export const SideBar = [
     selected:false
   },
   {
-    title: 'Tutorial 4',
+    title: 'Recherches Avancées',
     route: 'tutorial4',
     selected:false
   },

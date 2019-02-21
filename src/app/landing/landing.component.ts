@@ -11,7 +11,7 @@ export class LandingComponent implements OnInit {
   landingLanguage = Landing;
   options = {
     dots: true,
-    autoplay: false,
+    autoplay: true,
     loop: true,
     items: 1,
     responsiveClass: true

@@ -290,15 +290,21 @@
           <div>db.(nom collection).totalSize()</div>
           <div>db.(nom collection).totalIndexSize ()</div>
         </div>
-        <div class="example-image-div margin-top"><img style="width: 100%" src="assets/images/mongo-images/stats.png"></div>
+        <div class="example-image-div margin-top"><img style="width: 100%" src="assets/images/mongo-images/stats.png">
+        </div>
 
         <div class="subtitle-div">Import/Export d'une base de donnée</div>
         <div class="alert-div">Ces Commandes s'utilisent sans la commande "mongo".
-          Pour les executer il faut ouvrir une nouvelle fenetre de commande</div>
+          Pour les executer il faut ouvrir une nouvelle fenetre de commande
+        </div>
         <div class="reponse-div">
-          <div>mongodump --host localhost --port 27017 --db (Nom de base de données) --out (Nom du fichier pour exporter les données)</div>
-          <div>mongorestore --host localhost -d (Nom de base de données) (le path du fichier contenant les données exportés)</div>
+          <div>mongodump --host localhost --port 27017 --db (Nom de base de données) --out (Nom du fichier pour exporter
+            les données)
           </div>
+          <div>mongorestore --host localhost -d (Nom de base de données) (le path du fichier contenant les données
+            exportés)
+          </div>
+        </div>
         <div class="margin-top title-bigger-div">
           Il est assez lourd de devoir taper à chaque fois db.(nom collection).commande, la console Mongo est aussi un
           shell JavaScript, il est donc tout
@@ -307,6 +313,102 @@
         <div class="reponse-div">
           <div>t = db.(nom collection)</div>
           <div>t.find().pretty()</div>
+        </div>
+
+        <div class="subtitle-div">Import/Export d'une collection</div>
+        <div class="alert-div">Ces Commandes s'utilisent sans la commande "mongo".
+          Pour les executer il faut ouvrir une nouvelle fenetre de commande
+        </div>
+        <div class="reponse-div">
+          <div>mongoimport --db (Nom de base de donnée) --collection (nom de la collection --file (path du fichier
+            JSON).json
+          </div>
+          <div>mongoexport --db (Nom de base de donnée) --c (nom de la collection) --out (npm du ficher).json</div>
+        </div>
+      </div>
+    </ng-container>
+    <ng-container *ngIf="route=='tutorial4'">
+      <div class="section-title">Recherches Avancées</div>
+      <div class="content-text">
+        <div class="subtitle-div">Les Dates</div>
+        <div class="margin-top">
+          Lorsque l’on veut requêter une date dans Mongo, il faut créer un objet de type Date. Cela se fait soit directement via le constructeur
+          Date de JavaScript, soit via le wrapper Mongo ISODate.
+        </div>
+        <div class="margin-top">
+          La fonction Date() appelée sans new retourne simplement la date courante en tant que chaine de caractères. Les autres formes,
+          c’est à dire new Date(xxx), new ISODate(xxx) et ISODate(xxx) sont équivalentes et font toutes appel au wrapper ISODate. Il ne s’agit
+          donc que d’une question de préférence personnelle.
+        </div>
+        <div class="margin-top">
+          Maintenant que nous avons levé l’ambiguïté qu’il peut y avoir entre ces différentes méthodes, utilisons-les. Pour l’exemple, nous
+          allons récupérer les utilisateurs créés depuis le 15 septembre 2015.
+        </div>
+        <div class="margin-top exemple-div">
+          {{exempleDate}}
+        </div>
+        <div class="margin-top">
+          Évidemment, qui dit date dit aussi heure. Franchissons le cap de la précision, les utilisateurs qui se sont enregistrés après le
+          15 septembre 2015 à 13h20.
+        </div>
+        <div class="margin-top exemple-div">
+          {{exempleDate2}}
+        </div>
+        <div class="margin-top">
+          Vous vous apercevez certainement que la précision va jusqu’à la milliseconde… En effet, le moteur de Mongo stocke et traite les dates
+          en nombre de millisecondes depuis l’époque Unix (sous la forme d’un entier de 64 bits, si ça vous intéresse). Nous héritons donc de
+          la précision de ce format.
+        </div>
+        <div class="margin-top">
+          Vous notez peut-être également que deux lettres viennent s’ajouter à notre équation. Le T vient simplement faire office de séparateur
+          et indique Time, tandis que le Z signifie que nous traitons du temps en Zulu Time [en], autrement dit, l’heure UTC.
+        </div>
+        <div class="margin-top">
+          La présence ou l’absence du Z est importante. Mongo stocke dans tous les cas la date au format UTC. Cependant, si vous omettez le
+          Z, Mongo considère qu’il s’agit du fuseau horaire courant, donc UTC+1 si vous êtes sur le fuseau horaire de Paris, ou plus
+          généralement CET (Central European Time), autrement dit l’heure d’Europe Centrale.
+        </div>
+        <div class="margin-top">
+          Vous le comprenez, en l’absence du Z, Mongo fera l’opération pour ajouter ou retrancher des heures à UTC avant de la stocker,
+          tandis que si vous le préciser, il stocke tel quel.
+        </div>
+
+        <div class="subtitle-div">Index</div>
+        <div class="margin-top">
+          Comme dans MySQL, les index permettent d’accélérer les requêtes en évitant au moteur de base de données de devoir scanner tous
+          les documents de la collection afin de trouver ceux correspondant à la requête.
+        </div>
+        <div class="margin-top">
+          Voici les commandes les plus courantes :
+        </div>
+        <div class="margin-top exemple-div">
+          {{exempleIndex1}} Pour créer un index
+        </div>
+        <div class="margin-top exemple-div">
+          {{exempleIndex2}} Pour créer un index et préciser que la valeur doit être unique
+        </div>
+        <div class="margin-top">
+          L’index ci-dessus considérera une absence de valeur comme une valeur. Il n’y a donc qu’un email qui pourra être vide ensuite
+          mongo considérera les autres email sans valeur comme dupliqués et refusera de les ajouter. Pour empêcher ce comportement, on peut
+          utiliser l’option sparse.
+        </div>
+        <div class="exemple-div margin-top">
+          {{exempleIndex3}}
+        </div>
+        <div class="margin-top">
+          Voici quelques exemples d'index:
+        </div>
+        <div class="margin-top exemple-div">
+          {{exempleIndex4}} Pour afficher les index d'une collection
+        </div>
+        <div class="margin-top exemple-div">
+          {{exempleIndex5}} Pour supprimer un index (le nom de l'index est fourni par getIndexes)
+        </div>
+        <div class="margin-top exemple-div">
+          {{exempleIndex6}} Pour supprimer tous les indexes d'une collection
+        </div>
+        <div class="margin-top exemple-div">
+          {{exempleIndex7}} Pour supprimer tous les indexes de la base
         </div>
       </div>
     </ng-container>
