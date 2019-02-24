@@ -240,6 +240,8 @@ export class TutorialComponent implements OnInit {
   maxExemple: string = 'db.(nom collection).aggregate([{$group : {_id : "$nom", num_tutorial : {$max : "$likes"}}}])';
   pushExemple: string = 'db.(nom collection).aggregate([{$group : {_id : "$nom", notes : {$push : "$notes"}}}])';
   addToSetExemple: string = 'db.(nom collection).aggregate([{$group : {_id : "$nom", notes : {$addToSet : "$notes"}}}])';
+  admin1: string = 'En outre, il est également possible d’utiliser la commande db.runCommand( { usersInfo: { forAllDBs: true } } )\n' +
+    '          afin de lister tous les utilisateurs depuis n’importe quelle base.';
 
   constructor() {
   }

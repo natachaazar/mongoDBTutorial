@@ -814,5 +814,73 @@
         <div class="example-image-div margin-top"><img src="assets/images/mongo-images/sql9.PNG"></div>
       </div>
     </ng-container>
+    <ng-container *ngIf="route=='tutorial7'">
+      <div class="section-title">Administration</div>
+      <div class="content-text">
+        <div class="subtitle-div">Gestion des utilisateurs</div>
+        <div class="margin-top">
+          Par défaut, Mongo est accessible sans authentification et permet toutes les actions sur la base. Il est
+          évident que dès lorsque que votre base est sur un serveur connecté sur Internet et que vous passez en
+          production, cette configuration par défaut manque de sécurité. Ça devient même clairement du suicide si vous
+          permettez de vous connecter à la base depuis le réseau… Réglage à effectuer dans /etc/mongod.conf :
+        </div>
+        <div class="example-image-div margin-top"><img src="assets/images/mongo-images/admin1.PNG"></div>
+        <div class="margin-top">
+          De manière similaire à MySQL, vous ajoutez des utilisateurs et leur attribuez des droits (ici des rôles, sur
+          divers bases). Nous allons pour l’exemple créer un utilisateur « buzut » qui peut lire et écrire dans la base
+          « blog_buzut » :
+        </div>
+        <div class="example-image-div margin-top"><img src="assets/images/mongo-images/admin2.PNG"></div>
+        <div class="margin-top">
+          Une fois vos utilisateurs créés, il faut que vous configuriez mongo pour qu’il demande les accès. Pour cela,
+          dans le fichier de config – situé dans /etc/mongod.conf – il faut ajouter le paramètre de sécurité
+          correspondant :
+        </div>
+        <div class="example-image-div margin-top"><img src="assets/images/mongo-images/admin3.PNG"></div>
+        <div class="margin-top">
+          Si vous avez modifié le fichier de config, il faut que vous redémarriez mongo pour que les changements
+          s’appliquent. Pour cela, faites sudo service mongod restart
+        </div>
+        <div class="margin-top alert-div">
+          Attention, si vous créez un utilisateur non administrateur et que vous activez ensuite l’authentification,
+          vous ne pourrez plus créer d’autres utilisateurs. Pour créer un utilisateur avec les droits administrateur :
+        </div>
+        <div class="example-image-div margin-top"><img src="assets/images/mongo-images/admin4.PNG"></div>
+        <div class="margin-top">
+          Bien pratique, vous trouverez la liste des rôles dans
+          <a href="https://docs.mongodb.com/manual/reference/built-in-roles/">la doc</a>
+          et vous pouvez même
+          <a href="https://docs.mongodb.com/manual/tutorial/manage-users-and-roles/#create-a-user-defined-role">créer
+            des rôles sur mesure</a>
+          pour plus de souplesse.
+        </div>
+        <div class="margin-top">
+          La commande db.getUsers() vous permet de vérifier les utilisateurs d’une base ainsi que leurs rôles.
+          Alternativement, pour lister l’ensemble des utilisateurs vous pouvez exécuter la commande show users depuis la
+          base admin.
+        </div>
+        <div class="margin-top">
+          {{admin1}}
+        </div>
+        <div class="margin-top">
+          Vous pouvez changer le mot de passe d’un utilisateur avec db.changeUserPassword("username", "newPass") et
+          effacer un utilisateur avec db.dropUser("username"). Ces deux commandes nécessitent les privilèges
+          administrateur et elles doivent être exécutées depuis la base à laquelle les utilisateurs sont liés.
+        </div>
+        <div class="margin-top">
+          Enfin, il est également possible d’ajouter et révoquer des droits ultérieurement. Nous utiliserons pour cela
+          les commandes db.grantRolesToUser et db.revokeRolesFromUser :
+        </div>
+        <div class="example-image-div margin-top"><img src="assets/images/mongo-images/admin5.PNG"></div>
+
+        <div class="margin-top subtitle-div">Connexion</div>
+        <div class="margin-top">
+          Une fois les utilisateurs créés et la base paramétrée pour passer en mode « authorization », il faudra que
+          vous vous connectiez avec vos identifiants, sinon, vous serez jetés ! Pour ce faire, il faut préciser le login
+          et le mot de passe ainsi que la base à laquelle l’utilisateur est rattaché :
+        </div>
+        <div class="example-image-div margin-top"><img src="assets/images/mongo-images/admin6.PNG"></div>
+      </div>
+    </ng-container>
   </mat-sidenav-content>
 </mat-sidenav-container>
