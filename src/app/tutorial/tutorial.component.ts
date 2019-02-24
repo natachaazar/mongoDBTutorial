@@ -172,7 +172,71 @@ export class TutorialComponent implements OnInit {
     '{ "_id" : "Lynn", "moyenne" : 11.370957711442786 }\n' +
     '{ "_id" : "Iman", "moyenne" : 11.036186099942562 }';
 
-  sum:string='{$sum: }';
+  lookup:string='{$lookup:{ }}';
+  lookupExemple:string='{\n' +
+    '   $lookup:\n' +
+    '     {\n' +
+    '       from: <collection to join>,\n' +
+    '       localField: <field from the input documents>,\n' +
+    '       foreignField: <field from the documents of the "from" collection>,\n' +
+    '       as: <output array field>\n' +
+    '     }\n' +
+    '}';
+  lookupExempleInsert1:string='db.orders.insert([\n' +
+    '   { "_id" : 1, "item" : "almonds", "price" : 12, "quantity" : 2 },\n' +
+    '   { "_id" : 2, "item" : "pecans", "price" : 20, "quantity" : 1 },\n' +
+    '   { "_id" : 3  }\n' +
+    '])';
+  lookupExempleInsert2:string='db.inventory.insert([\n' +
+    '   { "_id" : 1, "sku" : "almonds", description: "product 1", "instock" : 120 },\n' +
+    '   { "_id" : 2, "sku" : "bread", description: "product 2", "instock" : 80 },\n' +
+    '   { "_id" : 3, "sku" : "cashews", description: "product 3", "instock" : 60 },\n' +
+    '   { "_id" : 4, "sku" : "pecans", description: "product 4", "instock" : 70 },\n' +
+    '   { "_id" : 5, "sku": null, description: "Incomplete" },\n' +
+    '   { "_id" : 6 }\n' +
+    '])';
+  lookupExemple2:string='db.orders.aggregate([\n' +
+    '   {\n' +
+    '     $lookup:\n' +
+    '       {\n' +
+    '         from: "inventory",\n' +
+    '         localField: "item",\n' +
+    '         foreignField: "sku",\n' +
+    '         as: "inventory_docs"\n' +
+    '       }\n' +
+    '  }\n' +
+    '])';
+  lookupExemple3:string='{\n' +
+    '   "_id" : 1,\n' +
+    '   "item" : "almonds",\n' +
+    '   "price" : 12,\n' +
+    '   "quantity" : 2,\n' +
+    '   "inventory_docs" : [\n' +
+    '      { "_id" : 1, "sku" : "almonds", "description" : "product 1", "instock" : 120 }\n' +
+    '   ]\n' +
+    '}\n' +
+    '{\n' +
+    '   "_id" : 2,\n' +
+    '   "item" : "pecans",\n' +
+    '   "price" : 20,\n' +
+    '   "quantity" : 1,\n' +
+    '   "inventory_docs" : [\n' +
+    '      { "_id" : 4, "sku" : "pecans", "description" : "product 4", "instock" : 70 }\n' +
+    '   ]\n' +
+    '}\n' +
+    '{\n' +
+    '   "_id" : 3,\n' +
+    '   "inventory_docs" : [\n' +
+    '      { "_id" : 5, "sku" : null, "description" : "Incomplete" },\n' +
+    '      { "_id" : 6 }\n' +
+    '   ]\n' +
+    '}';
+  sumExemple:string='db.(nom collection).aggregate([{$group : {_id : "$nom", num_tutorial : {$sum : "$likes"}}}])';
+  avgExemple:string='db.(nom collection).aggregate([{$group : {_id : "$nom", num_tutorial : {$avg : "$likes"}}}])';
+  minExemple:string='db.(nom collection).aggregate([{$group : {_id : "$nom", num_tutorial : {$min : "$likes"}}}])';
+  maxExemple:string='db.(nom collection).aggregate([{$group : {_id : "$nom", num_tutorial : {$max : "$likes"}}}])';
+  pushExemple:string='db.(nom collection).aggregate([{$group : {_id : "$nom", notes : {$push : "$notes"}}}])';
+  addToSetExemple:string='db.(nom collection).aggregate([{$group : {_id : "$nom", notes : {$addToSet : "$notes"}}}])';
 
   constructor() {
   }

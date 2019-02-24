@@ -632,6 +632,7 @@
           document JSON final résultant à la fin du pipeline). Cela peut ensuite être utilisé pour la prochaine étape et
           ainsi de suite.
         </div>
+        <div class="example-image-div margin-top"><img src="assets/images/mongo-images/aggregations.PNG"></div>
         <div class="margin-top">
           Cette fonction aggregate prend une liste d’opérateurs en paramètre. Il existe plusieurs types d’opérateurs de
           manipulation de données. Nous allons nous concentrer par la suite sur les principaux :
@@ -718,6 +719,91 @@
         <div class="margin-top exemple-div">
           {{skip2}}
         </div>
+
+        <div class="subtitle-div">{{lookup}}</div>
+        <div class="margin-top">
+          Cet aggregation correspond à la jointure dans SQL. Pour effectuer une correspondance d'égalité entre un champ
+          des documents d'entrée et un champ des documents de
+          la collection «jointe», l'étape $ lookup a la syntaxe suivante:
+        </div>
+        <div class="margin-top reponse-div">
+          {{lookupExemple}}
+        </div>
+        <div class="margin-top exemple-div">
+          {{lookupExempleInsert1}}
+        </div>
+        <div class="margin-top exemple-div">
+          {{lookupExempleInsert2}}
+        </div>
+        <div class="margin-top exemple-div">
+          {{lookupExemple2}}
+        </div>
+        <div class="margin-top exemple-div">
+          {{lookupExemple3}}
+        </div>
+
+        <div class="margin-top title-bigger-div">Les expressions d'aggregations</div>
+        <div class="subtitle-div">$sum</div>
+        <div class="margin-top">
+          Résume la valeur définie de tous les documents de la collection.
+        </div>
+        <div class="exemple-div margin-top">
+          {{sumExemple}}
+        </div>
+
+        <div class="subtitle-div">$avg</div>
+        <div class="margin-top">
+          Calcule la moyenne de toutes les valeurs données de tous les documents de la collection.
+        </div>
+        <div class="exemple-div margin-top">
+          {{avgExemple}}
+        </div>
+
+        <div class="subtitle-div">$min</div>
+        <div class="margin-top">
+          Obtient le minimum des valeurs correspondantes de tous les documents de la collection.
+        </div>
+        <div class="exemple-div margin-top">
+          {{minExemple}}
+        </div>
+
+        <div class="subtitle-div">$max</div>
+        <div class="margin-top">
+          Obtient le maximum des valeurs correspondantes de tous les documents de la collection.
+        </div>
+        <div class="exemple-div margin-top">
+          {{maxExemple}}
+        </div>
+
+        <div class="subtitle-div">$push</div>
+        <div class="margin-top">
+          Insère la valeur dans un tableau du document résultant.
+        </div>
+        <div class="exemple-div margin-top">
+          {{pushExemple}}
+        </div>
+
+        <div class="subtitle-div">$addToSet</div>
+        <div class="margin-top">
+          Insère la valeur dans un tableau du document résultant, mais ne crée pas de doublons.
+          <div class="exemple-div margin-top">
+            {{addToSetExemple}}
+          </div>
+        </div>
+
+        <div class="margin-top title-bigger-div">
+          Enfin, Ces tableaux représente la difference entre SQL et les aggregations dans MongoDB
+        </div>
+        <div class="example-image-div margin-top"><img src="assets/images/mongo-images/sql.PNG"></div>
+
+        <div class="example-image-div margin-top"><img src="assets/images/mongo-images/sql1.PNG"></div>
+        <div class="example-image-div margin-top"><img src="assets/images/mongo-images/sql3.PNG"></div>
+        <div class="example-image-div margin-top"><img src="assets/images/mongo-images/sql4.PNG"></div>
+        <div class="example-image-div margin-top"><img src="assets/images/mongo-images/sql5.PNG"></div>
+        <div class="example-image-div margin-top"><img src="assets/images/mongo-images/sql6.PNG"></div>
+        <div class="example-image-div margin-top"><img src="assets/images/mongo-images/sql7.PNG"></div>
+        <div class="example-image-div margin-top"><img src="assets/images/mongo-images/sql8.PNG"></div>
+        <div class="example-image-div margin-top"><img src="assets/images/mongo-images/sql9.PNG"></div>
       </div>
     </ng-container>
   </mat-sidenav-content>
