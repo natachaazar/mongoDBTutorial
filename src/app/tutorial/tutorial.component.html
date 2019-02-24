@@ -882,5 +882,86 @@
         <div class="example-image-div margin-top"><img src="assets/images/mongo-images/admin6.PNG"></div>
       </div>
     </ng-container>
+    <ng-container *ngIf="route=='tutorial8'">
+      <div class="section-title">Les Relation Dans MongoDB</div>
+      <div class="content-text">
+        <div class="subtitle-div">ObjectID</div>
+        <div class="margin-top">
+          Un ObjectId est un type BSON de 12 octets ayant la structure suivante
+        </div>
+        <ul class="margin-top">
+          <li>Les 4 premiers octets représentant les secondes depuis l'époque unix</li>
+          <li>Les 3 prochains octets sont l'identifiant de la machine</li>
+          <li>Les 2 prochains octets sont constitués de l'identifiant du processus</li>
+          <li>Les 3 derniers octets sont une valeur de compteur aléatoire</li>
+        </ul>
+        <div class="margin-top">
+          MongoDB utilise ObjectIds comme valeur par défaut du champ _id de chaque document, qui est généré lors de la
+          création de tout document. La combinaison complexe de ObjectId rend tous les champs _id uniques.
+        </div>
+        <div class="margin-top">
+          Les relations dans MongoDB indiquent comment divers documents sont reliés logiquement entre eux. Les relations
+          peuvent être modélisées via des approches incorporées et référencées. Ces relations peuvent être 1: 1, 1: N, N:
+          1 ou N: N.
+        </div>
+        <div class="margin-top">
+          Prenons le cas du stockage d'adresses pour les utilisateurs. Ainsi, un utilisateur peut avoir plusieurs
+          adresses, ce qui en fait une relation 1: N.
+        </div>
+        <div class="margin-top">
+          Voici un exemple de structure de document utilisateur:
+        </div>
+        <div class="margin-top exemple-div">
+          {{relation1}}
+        </div>
+        <div class="margin-top">
+          Voici l'exemple de structure de document d'adresse
+        </div>
+        <div class="margin-top exemple-div">
+          {{relation2}}
+        </div>
+        <div class="margin-top subtitle-div">Modélisation des relations incorporées</div>
+        <div class="margin-top">
+          Dans l'approche intégrée, nous allons incorporer le document d'adresse dans le document utilisateur.
+        </div>
+        <div class="margin-top exemple-div">
+          {{relation3}}
+        </div>
+        <div class="margin-top">
+          Cette approche conserve toutes les données associées dans un seul document, ce qui facilite la récupération et
+          la maintenance. Le document entier peut être récupéré en une seule requête telle que
+        </div>
+        <div class="margin-top exemple-div">
+          {{relation4}}
+        </div>
+        <div class="margin-top">
+          Notez que dans la requête ci-dessus, db et users sont respectivement la base de données et la collection.
+        </div>
+        <div class="margin-top">
+          L'inconvénient est que si la taille du document incorporé continue de croître de manière excessive, cela peut
+          avoir un impact sur les performances de lecture / écriture.
+        </div>
+        <div class="margin-top subtitle-div">Modélisation des relations référencées</div>
+        <div class="margin-top">
+          C'est l'approche de la conception d'une relation normalisée. Dans cette approche, les documents utilisateur et
+          adresse seront conservés séparément mais le document utilisateur contiendra un champ qui référencera le champ
+          ID du document d'adresse.
+        </div>
+        <div class="margin-top exemple-div">
+          {{relation5}}
+        </div>
+        <div class="margin-top">
+          Comme indiqué ci-dessus, le document utilisateur contient le champ array address_ids qui contient les
+          ObjectIds des adresses correspondantes. À l'aide de ces ObjectIds, nous pouvons interroger les documents
+          d'adresse et obtenir les détails de l'adresse à partir de là. Avec cette approche, nous aurons besoin de deux
+          requêtes: premièrement pour extraire les champs address_ids du document utilisateur et deuxièmement pour
+          extraire ces adresses de la collection d'adresses.
+        </div>
+        <div class="margin-top exemple-div">
+          <div>{{relation6}}</div>
+          <div>{{relation7}}</div>
+        </div>
+      </div>
+    </ng-container>
   </mat-sidenav-content>
 </mat-sidenav-container>

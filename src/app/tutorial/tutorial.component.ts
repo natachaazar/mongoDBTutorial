@@ -242,6 +242,52 @@ export class TutorialComponent implements OnInit {
   addToSetExemple: string = 'db.(nom collection).aggregate([{$group : {_id : "$nom", notes : {$addToSet : "$notes"}}}])';
   admin1: string = 'En outre, il est également possible d’utiliser la commande db.runCommand( { usersInfo: { forAllDBs: true } } )\n' +
     '          afin de lister tous les utilisateurs depuis n’importe quelle base.';
+  relation1: string = '{\n' +
+    '   "_id":ObjectId("52ffc33cd85242f436000001"),\n' +
+    '   "name": "Tom Hanks",\n' +
+    '   "contact": "987654321",\n' +
+    '   "dob": "01-01-1991"\n' +
+    '}';
+  relation2: string = '{\n' +
+    '   "_id":ObjectId("52ffc4a5d85242602e000000"),\n' +
+    '   "building": "22 A, Indiana Apt",\n' +
+    '   "pincode": 123456,\n' +
+    '   "city": "Los Angeles",\n' +
+    '   "state": "California"\n' +
+    '} ';
+  relation3: string = '{\n' +
+    '   "_id":ObjectId("52ffc33cd85242f436000001"),\n' +
+    '   "contact": "987654321",\n' +
+    '   "dob": "01-01-1991",\n' +
+    '   "name": "Tom Benzamin",\n' +
+    '   "address": [\n' +
+    '      {\n' +
+    '         "building": "22 A, Indiana Apt",\n' +
+    '         "pincode": 123456,\n' +
+    '         "city": "Los Angeles",\n' +
+    '         "state": "California"\n' +
+    '      },\n' +
+    '      {\n' +
+    '         "building": "170 A, Acropolis Apt",\n' +
+    '         "pincode": 456789,\n' +
+    '         "city": "Chicago",\n' +
+    '         "state": "Illinois"\n' +
+    '      }\n' +
+    '   ]\n' +
+    '} ';
+  relation4: string = '>db.users.findOne({"name":"Tom Benzamin"},{"address":1})';
+  relation5: string = '{\n' +
+    '   "_id":ObjectId("52ffc33cd85242f436000001"),\n' +
+    '   "contact": "987654321",\n' +
+    '   "dob": "01-01-1991",\n' +
+    '   "name": "Tom Benzamin",\n' +
+    '   "address_ids": [\n' +
+    '      ObjectId("52ffc4a5d85242602e000000"),\n' +
+    '      ObjectId("52ffc4a5d85242602e000001")\n' +
+    '   ]\n' +
+    '}';
+  relation6: string = '>var result = db.users.findOne({"name":"Tom Benzamin"},{"address_ids":1})';
+  relation7: string = '>var addresses = db.address.find({"_id":{"$in":result["address_ids"]}})';
 
   constructor() {
   }
