@@ -74,14 +74,105 @@ export class TutorialComponent implements OnInit {
   lt: string = 'db.(nom collection).find({année:{$lt:2012}}).pretty()';
   gte: string = 'db.(nom collection).find({année:{$gte:2012}}).pretty()';
   lte: string = 'db.(nom collection).find({année:{$lte:2012}}).pretty()';
+  eg: string = 'db.(nom collection).find({année:{$eq:2012}}).pretty()';
+  neg: string = 'db.(nom collection).find({année:{$ne:2012}}).pretty()';
   or: string = 'db.(nom collection).find({$or:[{année:2012},{année:2013}]}).pretty()';
   and: string = 'db.(nom collection).find({$and:[{année:2012},{couleur:rouge}]}).pretty()';
+  not: string = 'db.(nom collection).find( { price: { $not: { $gt: 1.99 } } } ).pretty()';
+  nor: string = 'db.(nom collection).find( { $nor: [ { price: 1.99 }, { sale: true } ]  } ).pretty()';
   inCritere: string = 'db.(nom collection).find({ language: { $in: [\'anglais\', \'francais\'] }).pretty()';
+  ninCritere: string = 'db.(nom collection).find({ language: { $nin: [\'anglais\', \'francais\'] }).pretty()';
   exists: string = 'db.(nom collection).find({language:{$exists:true}}).pretty()';
   regex: string = 'db.(nom collection).find({telephone:{$regex:\'/789$/\'}}).pretty()';
   type: string = 'db.(nom collection).find({nom:{$type:"string"}}).pretty()';
   all: string = 'db.(nom collection).find({ tags: { $all: [\'ssl\', \'security\'] }).pretty()';
+  size: string = 'db.(nom collection).find( { field: { $size: 3 } } ).pretty()';
+  min: string = 'db.(nom collection).update( { nom: "Sarah" }, { $min: { score: 150 } } )';
+  max: string = 'db.(nom collection).update( { nom: "Sarah" }, { $max: { score: 150 } } )';
+  set: string = 'db.(nom collection).update( { nom: "Sarah" }, { $set: { score: 150 } } )';
+  unset: string = 'db.(nom collection).update( { nom: "Sarah" }, { $unset: { prenom: 1 } } )';
+  pop: string = 'db.(nom collection).update( { nom: "Sarah" }, { $pop: { notes: -1 } } )';
+  pull: string = 'db.(nom collection).update( { }, { $pull: { fruits: { $in: [ "apples", "oranges" ] } } )';
+  push: string =  'db.(nom collection).update( { nom: "Sarah" }, { $push: { notes: 17 } } )';
+  addToSet: string =  'db.(nom collection).update( { nom: "Sarah" }, { $addToSet: { notes: 17 } } )';
+  each: string =  'db.(nom collection).update( { nom: "Sarah" }, { $addToSet: { notes: { $each: [ 17, 18, 19 ] } } } )';
   allSimilar: string = 'db.(nom collection).find({ $and: [ { tags: "ssl" }, { tags: "security" } ] }).pretty()';
+  aggExemple1: string = 'db.(nom collection).aggregate(pipeline, options)';
+  matchExemple: string = '{$match : {} }';
+  matchExemple1: string = 'db.pays.aggregate( [\n' +
+    '    { $match : {\n' +
+    '        "language":"Francais"\n' +
+    '    }}\n' +
+    '] )';
+  projectExemple: string = '{$project : {} }';
+  projectExemple2: string = 'db.pays.aggregate( [\n' +
+    '    { $match : {\n' +
+    '        "language":"Francais"\n' +
+    '    }},\n' +
+    '    { $project : {\n' +
+    '        "nom":1, "location":1, "_id":0\n' +
+    '    }}\n' +
+    '] )';
+  sortExemple: string = '{$sort : {} }';
+  sortExemple3: string = 'db.pays.aggregate( [\n' +
+    '    { $match : {\n' +
+    '        "language":"Francais"\n' +
+    '    }},\n' +
+    '    { $project : {\n' +
+    '        "nom":1, "location":1, "_id":0\n' +
+    '    }}\n' +
+    '     { $sort : {\n' +
+    '            "nom":1"\n' +
+    '       }}\n' +
+    '] )';
+  groupExemple1: string = '{$group : {} }';
+  groupExemple2: string = 'db.produit.aggregate( [\n' +
+    '    { $group : {\n' +
+    '        "_id" : "reference" , "prix" : { $sum : 1 } \n' +
+    '    }},\n' +
+    '] )';
+  groupExemple3: string = '' +
+    '{"_id" : "produit 0",     "prix" : 27.0}\n' +
+    '{"_id" : "produit 1",     "prix" : 7.0}\n' +
+    '{"_id" : "produit 2",     "prix" : 83.0}\n' +
+    '{"_id" : "produit 3",     "prix" : 56.0}\n' +
+    '{"_id" : "produit 4",     "prix" : 47.0}';
+  unwindExemple: string = '{$unwind : {} }  et {$sort : {} } ';
+  unwindExemple2: string = 'varUnwind = {$unwind : "$matieres"}\n' +
+    'varGroup4 = { $group : {"_id" : "$nom", "moyenne" : {$avg : "$matieres.note"} } };\n' +
+    'varSort2 = { $sort : { "moyenne" : -1 } }\n' +
+    'db.etudiants.aggregate( [ varUnwind, varGroup4, varSort2 ] );\n' +
+    '\n' +
+    '{ "_id" : "Sarah", "moyenne" : 11.634865110930088 }\n' +
+    '{ "_id" : "Rabih", "moyenne" : 11.447723132969035 }\n' +
+    '{ "_id" : "Farid", "moyenne" : 11.41823125728344 }\n' +
+    '{ "_id" : "Lynn", "moyenne" : 11.370957711442786 }\n' +
+    '{ "_id" : "Iman", "moyenne" : 11.036186099942562 }\n' +
+    '{ "_id" : "Imad", "moyenne" : 9.632911392405063 }';
+  limitExemple:string='{$limit : nombre }';
+  limitExemple2: string = 'varUnwind = {$unwind : "$matieres"}\n' +
+    'varGroup4 = { $group : {"_id" : "$nom", "moyenne" : {$avg : "$matieres.note"} } };\n' +
+    'varSort2 = { $sort : { "moyenne" : -1 } }\n' +
+    'varLimit3 = { $limit : 3 }\n' +
+    'db.etudiants.aggregate( [ varUnwind, varGroup4, varSort2 ] );\n' +
+    '\n' +
+    '{ "_id" : "Sarah", "moyenne" : 11.634865110930088 }\n' +
+    '{ "_id" : "Rabih", "moyenne" : 11.447723132969035 }\n' +
+    '{ "_id" : "Farid", "moyenne" : 11.41823125728344 }';
+
+  skip:string='{$skip: nombre }';
+  skip2: string = 'varUnwind = {$unwind : "$matieres"}\n' +
+    'varGroup4 = { $group : {"_id" : "$nom", "moyenne" : {$avg : "$matieres.note"} } };\n' +
+    'varSort2 = { $sort : { "moyenne" : -1 } }\n' +
+    'varlimit = { $limit: 3 }\n' +
+    'varSkip = { $skip: 2 }\n' +
+    'db.etudiants.aggregate( [ varUnwind, varGroup4, varSort2 ] );\n' +
+    '\n' +
+    '{ "_id" : "Farid", "moyenne" : 11.41823125728344 }\n' +
+    '{ "_id" : "Lynn", "moyenne" : 11.370957711442786 }\n' +
+    '{ "_id" : "Iman", "moyenne" : 11.036186099942562 }';
+
+  sum:string='{$sum: }';
 
   constructor() {
   }

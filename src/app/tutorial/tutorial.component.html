@@ -487,6 +487,8 @@
         <div class="margin-top title-bigger-div">
           On peut aller plus loin sur le critère de recherches en ajoutant des opérandes :
         </div>
+        <div class="margin-top title-bigger-div">Opérandes de "Find"</div>
+        <div class="margin-top title-bigger-div">Comparaison</div>
         <div class="subtitle-div">$gt : plus grand que</div>
         <div class="reponse-div">{{gt}}</div>
 
@@ -499,25 +501,59 @@
         <div class="subtitle-div">$lte: plus petit ou égal à</div>
         <div class="reponse-div">{{lte}}</div>
 
+        <div class="subtitle-div">$eq: égal à</div>
+        <div class="reponse-div">{{eg}}</div>
+
+        <div class="subtitle-div">$ne: non égal à</div>
+        <div class="reponse-div">{{neg}}</div>
+
         <div class="margin-top alert-div">
-          Les 4 opérandes ci-dessus fonctionnent pour des nombres et des chaines de caractères. Pour les chaines de
+          Les 6 opérandes ci-dessus fonctionnent pour des nombres et des chaines de caractères. Pour les chaines de
           caractères, l'ordre appliqué est l'ordre alphabétique.
         </div>
 
+        <div class="margin-top title-bigger-div">Logical</div>
         <div class="subtitle-div">$or : pour récupérer les documents qui correspondent à 2 critères différents</div>
         <div class="reponse-div">{{or}}</div>
 
         <div class="subtitle-div">$and : pour cumuler des critères</div>
         <div class="reponse-div">{{and}}</div>
 
-        <div class="subtitle-div">$in : pour récuperer les documents parmi le tableau des valeurs</div>
-        <div class="reponse-div">{{inCritere}}</div>
+        <div class="subtitle-div">$not : pour reverser la condition</div>
+        <div class="reponse-div">{{not}}</div>
+
+        <div class="subtitle-div">$nor : pour obtenir la condition logique NOR</div>
+        <div class="reponse-div">{{nor}}</div>
+
+        <div class="margin-top title-bigger-div">Element</div>
 
         <div class="subtitle-div">$exist : pour récuperer les documents qui ont le critère qui existe et non null</div>
         <div class="reponse-div">{{exists}}</div>
 
-        <div class="subtitle-div">$regex : pour récuperer les documents qui ont le critère correspondant à l'expression régulière donnée</div>
+        <div class="subtitle-div">$type : pour récuperer les documents qui ont le critère correspondant à un type
+          donné
+        </div>
+        <div class="reponse-div">{{type}}</div>
+
+        <div class="title-bigger-div margin-top">
+          Les Types disponibles dans Mongo DB sont:
+        </div>
+        <div class="example-image-div margin-top"><img src="assets/images/mongo-images/types1.PNG"></div>
+        <div class="example-image-div margin-top"><img src="assets/images/mongo-images/types2.PNG"></div>
+
+        <div class="margin-top title-bigger-div">Evaluation</div>
+        <div class="subtitle-div">$regex : pour récuperer les documents qui ont le critère correspondant à l'expression
+          régulière donnée
+        </div>
         <div class="reponse-div">{{regex}}</div>
+
+        <div class="margin-top title-bigger-div">Array</div>
+
+        <div class="subtitle-div">$in : pour récuperer les documents parmi le tableau des valeurs</div>
+        <div class="reponse-div">{{inCritere}}</div>
+
+        <div class="subtitle-div">$nin : pour récuperer tous les documents sauf ceux parmi le tableau des valeurs</div>
+        <div class="reponse-div">{{ninCritere}}</div>
 
         <div class="subtitle-div">$all : pour cumuler des critères correspondant au tableau des valeurs.</div>
         <div class="reponse-div">{{all}}</div>
@@ -527,15 +563,161 @@
         <div class="reponse-div">
           {{allSimilar}}
         </div>
+        <div class="subtitle-div">$size : pour retourner les records dont la liste correspond à une size donnée</div>
+        <div class="reponse-div">{{size}}</div>
 
-        <div class="subtitle-div">$type : pour récuperer les documents qui ont le critère correspondant à un type donné</div>
-        <div class="reponse-div">{{type}}</div>
-
-        <div class="title-bigger-div margin-top">
-          Les Types disponibles dans Mongo DB sont:
+        <div class="margin-top title-bigger-div">Opérandes de "Update"</div>
+        <div class="margin-top title-bigger-div">Element</div>
+        <div class="subtitle-div">$min : pour mettre à jour la valeur du champ avec la valeur spécifiée si celle-ci est
+          inférieure à la valeur actuelle du champ.
         </div>
-        <div class="example-image-div margin-top"><img src="assets/images/mongo-images/types1.PNG"></div>
-        <div class="example-image-div margin-top"><img src="assets/images/mongo-images/types2.PNG"></div>
+        <div class="reponse-div">{{min}}</div>
+
+        <div class="subtitle-div">$max : pour mettre à jour la valeur du champ avec la valeur spécifiée si celle-ci est
+          supérieure à la valeur actuelle du champ.
+        </div>
+        <div class="reponse-div">{{max}}</div>
+
+        <div class="subtitle-div">$set : pour remplacer la valeur d'un champ par la valeur spécifiée.
+        </div>
+        <div class="reponse-div">{{set}}</div>
+
+        <div class="subtitle-div">$unset : pour supprimer un champ particulier.
+        </div>
+        <div class="reponse-div">{{unset}}</div>
+
+        <div class="margin-top title-bigger-div">Array</div>
+
+        <div class="subtitle-div">$pop : pour supprimer le premier ou le dernier élément d'un tableau. Passez $ pop une
+          valeur de -1 pour supprimer le premier élément d'un tableau et 1 pour supprimer le dernier élément d'un
+          tableau.
+        </div>
+        <div class="reponse-div">{{pop}}</div>
+
+        <div class="subtitle-div">$pull : pour supprimer d'un tableau existant toutes les occurrences d'une valeur ou de
+          valeurs correspondant à une condition spécifiée.
+        </div>
+        <div class="reponse-div">{{pull}}</div>
+
+        <div class="subtitle-div">$push : pour ajouter une valeur spécifiée à un tableau.
+        </div>
+        <div class="reponse-div">{{push}}</div>
+
+        <div class="subtitle-div">$addToSet : pour ajouter une valeur à un tableau sauf si la valeur est déjà présente,
+          auquel cas $ addToSet ne fait rien pour ce tableau.
+        </div>
+        <div class="reponse-div">{{addToSet}}</div>
+
+        <div class="margin-top title-bigger-div">Modificateurs</div>
+
+        <div class="subtitle-div">$each : Le modificateur $ each est disponible pour une utilisation avec l'opérateur $
+          addToSet et l'opérateur $ push.
+        </div>
+        <div class="reponse-div">{{each}}</div>
+      </div>
+    </ng-container>
+    <ng-container *ngIf="route=='tutorial6'">
+      <div class="section-title">Les Aggregations de MongoDB</div>
+      <div class="content-text">
+        Et si maintenant, nous regardions des opérations plus complexes pour bien manipuler nos données ? Pour cela, la
+        fonction "aggregate ()" permet de spécifier des chaînes d’opérations, appelées pipeline d’agrégation.
+        <div class="margin-top exemple-div">
+          {{aggExemple1}}
+        </div>
+        <div class="margin-top">
+          Dans la commande UNIX, le pipeline shell signifie la possibilité d’exécuter une opération sur une entrée et
+          d’utiliser la sortie comme entrée de la commande suivante, etc. MongoDB prend également en charge le même
+          concept dans le cadre d'agrégation. Il existe un ensemble d'étapes possibles. Chacune de ces étapes est
+          considérée comme un ensemble de documents en entrée et produit un ensemble de documents résultant (ou le
+          document JSON final résultant à la fin du pipeline). Cela peut ensuite être utilisé pour la prochaine étape et
+          ainsi de suite.
+        </div>
+        <div class="margin-top">
+          Cette fonction aggregate prend une liste d’opérateurs en paramètre. Il existe plusieurs types d’opérateurs de
+          manipulation de données. Nous allons nous concentrer par la suite sur les principaux :
+        </div>
+        <div class="subtitle-div">{{matchExemple}}</div>
+        <div class="margin-top">
+          C’est le plus simple, il correspond au premier paramètre de la requête find que nous avons fait jusqu’ici. Il
+          permet donc de filtrer le contenu d’une collection.
+        </div>
+        <div class="exemple-div margin-top">
+          {{matchExemple1}}
+        </div>
+        <div class="subtitle-div">{{projectExemple}}</div>
+        <div class="margin-top">
+          C’est le second paramètre du find. Il donne le format de sortie des documents (projection). Il peut par
+          ailleurs être utilisé pour changer le format d’origine.
+        </div>
+        <div class="exemple-div margin-top">
+          {{projectExemple2}}
+        </div>
+        <div class="subtitle-div">{{sortExemple}}</div>
+        <div class="margin-top">
+          Trier le résultat final sur les valeurs d’une clé choisi.
+        </div>
+        <div class="exemple-div margin-top">
+          {{sortExemple3}}
+        </div>
+        <div class="subtitle-div">{{groupExemple1}}</div>
+        <div class="margin-top">
+          C’est l’opération d’agrégation. Il va permettre de grouper les documents par valeur, et appliquer des
+          fonctions d’agrégat. La sortie est une nouvelle collection avec les résultats de l’agrégation. (comme un group
+          by SQL)
+        </div>
+        <div class="exemple-div margin-top">
+          {{groupExemple2}}
+        </div>
+        <div class="margin-top">
+          Cette aggregation permet de donner la somme des prix de chaque reference de produit dans la table des
+          produits. Pour utiliser $group
+          on doit mettre dans _id l'attribut avec lequel on group les élements et le critère selon lequel on obtient les
+          resultats.
+        </div>
+        <div class="margin-top">
+          On Obtient alors le resultat ci dessous:
+        </div>
+        <div class="exemple-div margin-top">
+          {{groupExemple3}}
+        </div>
+        <div class="subtitle-div">{{unwindExemple}}</div>
+        <div class="margin-top">
+          $sort permet de trier les resultats par ordre croissant ou decroissant
+        </div>
+        <div class="margin-top">
+          $unwind prend une liste de valeur et produit pour chaque élément de la liste un nouveau document en
+          sortie avec cet élément. Il pourrait correspondre à une jointure, à ceci près que celle-ci ne filtre pas les
+          données d’origine, juste un complément qui est imbriqué dans le document. On pourrait le comparer à une
+          jointure externe avec imbrication et listes.
+        </div>
+        <div class="margin-top">
+          Par exemple, considerons maintenant une table des étudiants contenant chacun une liste de matières (chaque
+          matière a une note).Maintenant,
+          trouvons le score moyen des etudiants par nom, et trions par score décroissant. Pour cela, nous
+          groupons les valeurs par nom d'etudiant ($nom), nous utilisons la fonction d’agrégat "$avg" pour la moyenne
+          (average), puis nous trions sur la nouvelle clé produite "$moyenne".
+        </div>
+        <div class="margin-top">
+          Un problème se pose comment calculer la moyenne sur une "matière.note" qui est une liste ? Il faudrait au
+          préalable retirer chaque élément de la liste, puis faire la moyenne sur l’ensemble des valeurs. C’est
+          l’opérateur $unwind qui s’en charge, il suffit de lui donner la clé contenant la liste à désimbriquer.
+        </div>
+        <div class="exemple-div margin-top">{{unwindExemple2}}
+        </div>
+        <div class="subtitle-div">{{limitExemple}}</div>
+        <div class="margin-top">
+          Cet opérand permet de limiter les resultats retournés
+        </div>
+        <div class="margin-top exemple-div">
+          {{limitExemple2}}
+        </div>
+        <div class="subtitle-div">{{skip}}</div>
+        <div class="margin-top">
+          Cet opérand permet de sauter un certains nombre de records avant de retourner les autres
+        </div>
+        <div class="margin-top exemple-div">
+          {{skip2}}
+        </div>
       </div>
     </ng-container>
   </mat-sidenav-content>
