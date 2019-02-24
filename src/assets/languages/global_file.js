@@ -51,5 +51,10 @@ export const SideBar = [
     title: 'Les Relations',
     route: 'tutorial8',
     selected:false
+  },
+  {
+    title: 'Sauvegarde et restauration',
+    route: 'tutorial9',
+    selected:false
   }
 ];

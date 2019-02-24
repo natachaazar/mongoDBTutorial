@@ -297,6 +297,7 @@ export class TutorialComponent implements OnInit {
   }
 
   onChangeSection(section) {
+    window.scrollTo(0, 0);
     this.route = section.route;
     console.log('routee', this.route);
   }
