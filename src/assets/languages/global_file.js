@@ -46,5 +46,10 @@ export const SideBar = [
     title: 'Administration',
     route: 'tutorial7',
     selected:false
+  },
+  {
+    title: 'Les Relations',
+    route: 'tutorial8',
+    selected:false
   }
 ];

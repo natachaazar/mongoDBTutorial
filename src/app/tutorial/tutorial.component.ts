@@ -47,6 +47,9 @@ export class TutorialComponent implements OnInit {
   insert: string = 'db.(nom collection).insert({attribut1: \'Quentin\', attribut2: \'Busuttil\'})';
   insertMany: string = 'db.(nom collection).insert([{attribut1: \'Quentin\', attribut2: \'Busuttil\'},{attribut1: \'Value1\', attribut2: \'Value2\'}])';
   selection1: string = 'db.contacts.find({condition},{projection},{options})';
+  distinction1: string = 'db.contacts.distinct({condition},{projection},{options})';
+  distinction2: string = 'db.contacts.distinct( "sizes" )';
+  resultatDistinct: string = '[S, M, L]';
   selection: string = 'db.contacts.find({ attribut1: \'quentin\', attribut2: \'busuttil\' })';
   removeAll: string = 'db.(nom collection).remove({condition})';
   effacerUn: string = 'db.(nom collection).remove({attribut1:\'Quentin\'})';
@@ -93,9 +96,9 @@ export class TutorialComponent implements OnInit {
   unset: string = 'db.(nom collection).update( { nom: "Sarah" }, { $unset: { prenom: 1 } } )';
   pop: string = 'db.(nom collection).update( { nom: "Sarah" }, { $pop: { notes: -1 } } )';
   pull: string = 'db.(nom collection).update( { }, { $pull: { fruits: { $in: [ "apples", "oranges" ] } } )';
-  push: string =  'db.(nom collection).update( { nom: "Sarah" }, { $push: { notes: 17 } } )';
-  addToSet: string =  'db.(nom collection).update( { nom: "Sarah" }, { $addToSet: { notes: 17 } } )';
-  each: string =  'db.(nom collection).update( { nom: "Sarah" }, { $addToSet: { notes: { $each: [ 17, 18, 19 ] } } } )';
+  push: string = 'db.(nom collection).update( { nom: "Sarah" }, { $push: { notes: 17 } } )';
+  addToSet: string = 'db.(nom collection).update( { nom: "Sarah" }, { $addToSet: { notes: 17 } } )';
+  each: string = 'db.(nom collection).update( { nom: "Sarah" }, { $addToSet: { notes: { $each: [ 17, 18, 19 ] } } } )';
   allSimilar: string = 'db.(nom collection).find({ $and: [ { tags: "ssl" }, { tags: "security" } ] }).pretty()';
   aggExemple1: string = 'db.(nom collection).aggregate(pipeline, options)';
   matchExemple: string = '{$match : {} }';
@@ -149,7 +152,7 @@ export class TutorialComponent implements OnInit {
     '{ "_id" : "Lynn", "moyenne" : 11.370957711442786 }\n' +
     '{ "_id" : "Iman", "moyenne" : 11.036186099942562 }\n' +
     '{ "_id" : "Imad", "moyenne" : 9.632911392405063 }';
-  limitExemple:string='{$limit : nombre }';
+  limitExemple: string = '{$limit : nombre }';
   limitExemple2: string = 'varUnwind = {$unwind : "$matieres"}\n' +
     'varGroup4 = { $group : {"_id" : "$nom", "moyenne" : {$avg : "$matieres.note"} } };\n' +
     'varSort2 = { $sort : { "moyenne" : -1 } }\n' +
@@ -160,7 +163,7 @@ export class TutorialComponent implements OnInit {
     '{ "_id" : "Rabih", "moyenne" : 11.447723132969035 }\n' +
     '{ "_id" : "Farid", "moyenne" : 11.41823125728344 }';
 
-  skip:string='{$skip: nombre }';
+  skip: string = '{$skip: nombre }';
   skip2: string = 'varUnwind = {$unwind : "$matieres"}\n' +
     'varGroup4 = { $group : {"_id" : "$nom", "moyenne" : {$avg : "$matieres.note"} } };\n' +
     'varSort2 = { $sort : { "moyenne" : -1 } }\n' +
@@ -172,8 +175,8 @@ export class TutorialComponent implements OnInit {
     '{ "_id" : "Lynn", "moyenne" : 11.370957711442786 }\n' +
     '{ "_id" : "Iman", "moyenne" : 11.036186099942562 }';
 
-  lookup:string='{$lookup:{ }}';
-  lookupExemple:string='{\n' +
+  lookup: string = '{$lookup:{ }}';
+  lookupExemple: string = '{\n' +
     '   $lookup:\n' +
     '     {\n' +
     '       from: <collection to join>,\n' +
@@ -182,12 +185,12 @@ export class TutorialComponent implements OnInit {
     '       as: <output array field>\n' +
     '     }\n' +
     '}';
-  lookupExempleInsert1:string='db.orders.insert([\n' +
+  lookupExempleInsert1: string = 'db.orders.insert([\n' +
     '   { "_id" : 1, "item" : "almonds", "price" : 12, "quantity" : 2 },\n' +
     '   { "_id" : 2, "item" : "pecans", "price" : 20, "quantity" : 1 },\n' +
     '   { "_id" : 3  }\n' +
     '])';
-  lookupExempleInsert2:string='db.inventory.insert([\n' +
+  lookupExempleInsert2: string = 'db.inventory.insert([\n' +
     '   { "_id" : 1, "sku" : "almonds", description: "product 1", "instock" : 120 },\n' +
     '   { "_id" : 2, "sku" : "bread", description: "product 2", "instock" : 80 },\n' +
     '   { "_id" : 3, "sku" : "cashews", description: "product 3", "instock" : 60 },\n' +
@@ -195,7 +198,7 @@ export class TutorialComponent implements OnInit {
     '   { "_id" : 5, "sku": null, description: "Incomplete" },\n' +
     '   { "_id" : 6 }\n' +
     '])';
-  lookupExemple2:string='db.orders.aggregate([\n' +
+  lookupExemple2: string = 'db.orders.aggregate([\n' +
     '   {\n' +
     '     $lookup:\n' +
     '       {\n' +
@@ -206,7 +209,7 @@ export class TutorialComponent implements OnInit {
     '       }\n' +
     '  }\n' +
     '])';
-  lookupExemple3:string='{\n' +
+  lookupExemple3: string = '{\n' +
     '   "_id" : 1,\n' +
     '   "item" : "almonds",\n' +
     '   "price" : 12,\n' +
@@ -231,12 +234,12 @@ export class TutorialComponent implements OnInit {
     '      { "_id" : 6 }\n' +
     '   ]\n' +
     '}';
-  sumExemple:string='db.(nom collection).aggregate([{$group : {_id : "$nom", num_tutorial : {$sum : "$likes"}}}])';
-  avgExemple:string='db.(nom collection).aggregate([{$group : {_id : "$nom", num_tutorial : {$avg : "$likes"}}}])';
-  minExemple:string='db.(nom collection).aggregate([{$group : {_id : "$nom", num_tutorial : {$min : "$likes"}}}])';
-  maxExemple:string='db.(nom collection).aggregate([{$group : {_id : "$nom", num_tutorial : {$max : "$likes"}}}])';
-  pushExemple:string='db.(nom collection).aggregate([{$group : {_id : "$nom", notes : {$push : "$notes"}}}])';
-  addToSetExemple:string='db.(nom collection).aggregate([{$group : {_id : "$nom", notes : {$addToSet : "$notes"}}}])';
+  sumExemple: string = 'db.(nom collection).aggregate([{$group : {_id : "$nom", num_tutorial : {$sum : "$likes"}}}])';
+  avgExemple: string = 'db.(nom collection).aggregate([{$group : {_id : "$nom", num_tutorial : {$avg : "$likes"}}}])';
+  minExemple: string = 'db.(nom collection).aggregate([{$group : {_id : "$nom", num_tutorial : {$min : "$likes"}}}])';
+  maxExemple: string = 'db.(nom collection).aggregate([{$group : {_id : "$nom", num_tutorial : {$max : "$likes"}}}])';
+  pushExemple: string = 'db.(nom collection).aggregate([{$group : {_id : "$nom", notes : {$push : "$notes"}}}])';
+  addToSetExemple: string = 'db.(nom collection).aggregate([{$group : {_id : "$nom", notes : {$addToSet : "$notes"}}}])';
 
   constructor() {
   }
