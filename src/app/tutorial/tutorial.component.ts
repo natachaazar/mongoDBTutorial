@@ -8,8 +8,8 @@ import {Component, OnInit} from '@angular/core';
 export class TutorialComponent implements OnInit {
 
   route: string;
-  exemple1: string = '{nom: "Her", acteurs : [{nom:"Johansson", prenom:"Scarlett"}, {nom:"Phoenix", prenom:"Joaquim"}]}';
-  exemple2: string = '{nom: "Avengers", acteurs : [{nom:"Johansson", prenom:"Scarlett"}]}';
+  exemple1: string = '{nom: "Her", acteurs: [{nom: "Johansson", prenom: "Scarlett"}, {nom: "Phoenix", prenom: "Joaquim"}]}';
+  exemple2: string = '{nom: "Avengers", acteurs : [{nom: "Johansson", prenom: "Scarlett"}]}';
   exemple3: string = '{\n' +
     '        "_id": "558d0b3c5fa02e7e218b4b0c",\n' +
     '        "description": "James Bond 007 is on the search for a Russian decoding machine, known as Lektor. Bond needs to find this machine…",\n' +
@@ -22,10 +22,10 @@ export class TutorialComponent implements OnInit {
     '        "year": "1962-12-31T23:00:00.000Z",\n' +
     '        "likes":\n' +
     '        {\n' +
-    '        "count": 29,\n' +
-    '        "likedByUser": true\n' +
+    '            "count": 29,\n' +
+    '            "likedByUser": true\n' +
     '        }\n' +
-    '        }';
+    '}';
   exemple4: string = '{\n' +
     '    "_id": "558d0b395fa02e7e218b458c",\n' +
     '    "firstname": "Morgan",\n' +
@@ -68,26 +68,26 @@ export class TutorialComponent implements OnInit {
   exempleIndex7: string = 'db.getCollectionNames().forEach(function(collection) {\n' +
     '   db[collection].dropIndexes();\n' +
     '});';
-  sortExemple1: string = 'db.(nom collection).find({condition}).sort({"attribut1":1}).pretty()';
-  sortExemple2: string = 'db.(nom collection).find({condition},{projection},{sort:{"attribut1":1}}).pretty()';
+  sortExemple1: string = 'db.(nom collection).find({condition}).sort({"attribut1": 1}).pretty()';
+  sortExemple2: string = 'db.(nom collection).find({condition},{projection},{sort:{"attribut1": 1}}).pretty()';
   limitExample1: string = 'db.(nom collection).find({condition}).limit(5)';
   limitExample2: string = 'db.(nom collection).find({condition},{projection},{limit:5}).pretty()';
   criteresExemple: string = 'db.produits.find({dixmill:9999})';
-  gt: string = 'db.(nom collection).find({année:{$gt:2012}}).pretty()';
-  lt: string = 'db.(nom collection).find({année:{$lt:2012}}).pretty()';
-  gte: string = 'db.(nom collection).find({année:{$gte:2012}}).pretty()';
-  lte: string = 'db.(nom collection).find({année:{$lte:2012}}).pretty()';
-  eg: string = 'db.(nom collection).find({année:{$eq:2012}}).pretty()';
-  neg: string = 'db.(nom collection).find({année:{$ne:2012}}).pretty()';
-  or: string = 'db.(nom collection).find({$or:[{année:2012},{année:2013}]}).pretty()';
-  and: string = 'db.(nom collection).find({$and:[{année:2012},{couleur:rouge}]}).pretty()';
+  gt: string = 'db.(nom collection).find({année: {$gt:2012}}).pretty()';
+  lt: string = 'db.(nom collection).find({année: {$lt:2012}}).pretty()';
+  gte: string = 'db.(nom collection).find({année: {$gte:2012}}).pretty()';
+  lte: string = 'db.(nom collection).find({année: {$lte:2012}}).pretty()';
+  eg: string = 'db.(nom collection).find({année: {$eq:2012}}).pretty()';
+  neg: string = 'db.(nom collection).find({année: {$ne:2012}}).pretty()';
+  or: string = 'db.(nom collection).find({$or:[{année: 2012},{année:2013}]}).pretty()';
+  and: string = 'db.(nom collection).find({$and:[{année: 2012},{couleur:rouge}]}).pretty()';
   not: string = 'db.(nom collection).find( { price: { $not: { $gt: 1.99 } } } ).pretty()';
   nor: string = 'db.(nom collection).find( { $nor: [ { price: 1.99 }, { sale: true } ]  } ).pretty()';
   inCritere: string = 'db.(nom collection).find({ language: { $in: [\'anglais\', \'francais\'] }).pretty()';
   ninCritere: string = 'db.(nom collection).find({ language: { $nin: [\'anglais\', \'francais\'] }).pretty()';
-  exists: string = 'db.(nom collection).find({language:{$exists:true}}).pretty()';
-  regex: string = 'db.(nom collection).find({telephone:{$regex:\'/789$/\'}}).pretty()';
-  type: string = 'db.(nom collection).find({nom:{$type:"string"}}).pretty()';
+  exists: string = 'db.(nom collection).find({language: {$exists:true}}).pretty()';
+  regex: string = 'db.(nom collection).find({telephone: {$regex:\'/789$/\'}}).pretty()';
+  type: string = 'db.(nom collection).find({nom: {$type:"string"}}).pretty()';
   all: string = 'db.(nom collection).find({ tags: { $all: [\'ssl\', \'security\'] }).pretty()';
   size: string = 'db.(nom collection).find( { field: { $size: 3 } } ).pretty()';
   min: string = 'db.(nom collection).update( { nom: "Sarah" }, { $min: { score: 150 } } )';

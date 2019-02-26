@@ -4,44 +4,71 @@
   color: #499b45;
   font-size: 30px;
   margin-top: 10px;
+  font-weight: bold;
 }
 .content-text{
-  padding: 20px;
+  padding: 30px;
   color: #000;
   font-size: 16px;
+  padding-top: 15px;
 }
 .question-div{
   background-color: #499b45;
-  font-size: 18px;
+  font-size: 17px;
+  font-weight: 600;
   width: 100%;
-  margin-top: 20px;
-  padding: 20px;
+  margin-top: 25px;
+  padding: 16px;
+  position: relative;
+  box-shadow: 0 0 10px 0 rgba(#000, 0.5);
+  color: white;
+}
+.question-image{
+  background-image:url("../../assets/images/mongo-images/question.png");
+  background-repeat: no-repeat;
+  width: 26px;
+  height: 26px;
+  background-size: contain;
+  background-position: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin-top: -8px;
+  margin-left: -8px;
+  transform: rotate(-15deg);
 }
 .reponse-div{
-  border: solid 1px #499b45;
+  border: solid 2px #499b45;
   font-size: 16px;
   width: 100%;
   margin-top: 10px;
-  padding: 20px;
+  padding: 15px;
   white-space:pre-wrap;
+  box-shadow: 0 0 10px 0 rgba(#000, 0.5);
 }
 .margin-top{
-  margin-top: 5px;
+  margin-top: 8px;
+}
+.margin-extra-top{
+  margin-top: 20px;
 }
 .exemple-div{
-  background-color: black;
-  color: #ffffff;
+  //background-color: black;
+  background-color: #b9b9b9;
+  //color: #ffffff;
   padding:10px;
   white-space:pre-wrap;
+  box-shadow: 0 0 10px 0 rgba(#000, 0.5);
 }
 .subtitle-div{
   color: #499b45;
   font-size: 18px;
   text-decoration: underline;
-  margin-top: 10px;
+  margin-top: 22px;
 }
 .alert-div{
   color: red;
+  font-size: 17px;
 }
 .title-bigger-div{
   font-size: 18px;

@@ -5,8 +5,8 @@ export const Landing = {
   carousel_two_first_title: "Manipulation des ",
   carousel_two_second_title: "données",
   carousel_two_description: "Examiner les fonctionnalités de requêtage",
-  carousel_three_first_title: "Manipulation des ",
-  carousel_three_second_title: "données",
+  carousel_three_first_title: "Facile à ",
+  carousel_three_second_title: "adapter",
   carousel_three_description: "MongoDB est livré avec des liaisons pour les principaux langages de programmation",
   tutorial_btn: "Get Started"
 };
