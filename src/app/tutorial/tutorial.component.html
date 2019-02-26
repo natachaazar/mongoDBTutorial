@@ -162,6 +162,16 @@
           Laissez cette fenêtre Terminal / Command ouverte en background. Si vous devez utiliser Terminal / Command pour
           toute autre tâche ouvrez une nouvelle fenêtre.
         </div>
+        <div class="subtitle-div">Mongo DB Compass</div>
+        <div class="margin-top">
+          MongoDB Compass est une interface graphique pour MongoDB. Elle permet d'explorez visuellement vos données, exécuter des
+          requêtes ad hoc en quelques secondes, interagir avec vos données avec la fonctionnalité CRUD complète,
+          affichez et optimisez les performances de votre requête. Elle est disponible sous Linux, Mac ou Windows. Compass vous
+          permet de prendre des décisions plus éclairées en matière d'indexation, de validation de documents, etc.
+        </div>
+        <div class="margin-top">
+          <a href="https://www.mongodb.com/download-center/compass?jmp=hero">Installer Ici</a>
+        </div>
       </div>
     </ng-container>
     <ng-container *ngIf="route=='tutorial2'">
@@ -987,6 +997,56 @@
             JSON).json
           </div>
           <div>mongoexport --d (Nom de base de donnée) --c (nom de la collection) --o (npm du ficher).json</div>
+        </div>
+      </div>
+    </ng-container>
+    <ng-container *ngIf="route=='tutorial10'">
+      <div class="section-title">Avantages de MongoDB</div>
+      <div class="content-text">
+        Toute base de données relationnelle a une conception de schéma typique qui indique le nombre de tables et la
+        relation entre ces tables. Dans MongoDB, il n’existe pas de concept de relation.
+
+        <div class="subtitle-div">Avantages de MongoDB par rapport au SGBDR</div>
+        <div class="margin-top">
+          <ul>
+            <li>Schema less - MongoDB est une base de données de documents dans laquelle une collection contient
+              différents documents. Le nombre de champs, le contenu et la taille du document peuvent différer d'un
+              document à l'autre.
+            </li>
+            <li>La structure d'un seul objet est claire.</li>
+            <li>Aucune jointure complexe.</li>
+            <li>Capacité de requête profonde. MongoDB prend en charge les requêtes dynamiques sur des documents en
+              utilisant un langage de requête basé sur les documents presque aussi puissant que SQL.
+            </li>
+            <li>Réglage.</li>
+            <li>Facilité d'évolution - MongoDB est facile à adapter.</li>
+            <li>Conversion / mappage d'objets d'application en objets de base de données non nécessaire.</li>
+            <li>Utilise la mémoire interne pour stocker le groupe de travail (fenêtré), permettant un accès plus rapide
+              aux données.
+            </li>
+          </ul>
+        </div>
+        <div class="question-div">Pourquoi utiliser MongoDB?</div>
+        <div class="margin-top reponse-div">
+          <ul>
+            <li>Stockage orienté document - Les données sont stockées sous la forme de documents de style JSON.</li>
+            <li>Index sur n'importe quel attribut</li>
+            <li>Réplication et haute disponibilité</li>
+            <li>Partage automatique</li>
+            <li>Requêtes riches</li>
+            <li>Mises à jour rapides sur place</li>
+            <li>Support professionnel de MongoDB</li>
+          </ul>
+        </div>
+        <div class="question-div">Où utiliser MongoDB?</div>
+        <div class="margin-top reponse-div">
+          <ul>
+            <li>Big Data</li>
+            <li>Gestion du contenu et livraison</li>
+            <li>Infrastructure mobile et sociale</li>
+            <li>Gestion des données utilisateur</li>
+            <li>Data Hub</li>
+          </ul>
         </div>
       </div>
     </ng-container>

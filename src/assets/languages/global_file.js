@@ -18,6 +18,11 @@ export const SideBar = [
     selected:true
   },
   {
+    title: 'Avantages',
+    route: 'tutorial10',
+    selected:false
+  },
+  {
     title: 'Notions de collections',
     route: 'tutorial2',
     selected:false
