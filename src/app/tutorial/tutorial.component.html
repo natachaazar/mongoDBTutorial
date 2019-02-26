@@ -300,39 +300,6 @@
         </div>
         <div class="example-image-div margin-top"><img style="width: 100%" src="assets/images/mongo-images/stats.png">
         </div>
-
-        <div class="subtitle-div">Import/Export d'une base de donnée</div>
-        <div class="alert-div">Ces Commandes s'utilisent sans la commande "mongo".
-          Pour les executer il faut ouvrir une nouvelle fenetre de commande
-        </div>
-        <div class="reponse-div">
-          <div>mongodump --host localhost --port 27017 --db (Nom de base de données) --out (Nom du fichier pour exporter
-            les données)
-          </div>
-          <div>mongorestore --host localhost -d (Nom de base de données) (le path du fichier contenant les données
-            exportés)
-          </div>
-        </div>
-        <div class="margin-top title-bigger-div">
-          Il est assez lourd de devoir taper à chaque fois db.(nom collection).commande, la console Mongo est aussi un
-          shell JavaScript, il est donc tout
-          à fait possible d’enregistrer des choses dans des variables !
-        </div>
-        <div class="reponse-div">
-          <div>t = db.(nom collection)</div>
-          <div>t.find().pretty()</div>
-        </div>
-
-        <div class="subtitle-div">Import/Export d'une collection</div>
-        <div class="alert-div">Ces Commandes s'utilisent sans la commande "mongo".
-          Pour les executer il faut ouvrir une nouvelle fenetre de commande
-        </div>
-        <div class="reponse-div">
-          <div>mongoimport --db (Nom de base de donnée) --collection (nom de la collection --file (path du fichier
-            JSON).json
-          </div>
-          <div>mongoexport --db (Nom de base de donnée) --c (nom de la collection) --out (npm du ficher).json</div>
-        </div>
       </div>
     </ng-container>
     <ng-container *ngIf="route=='tutorial4'">
@@ -901,7 +868,8 @@
         </div>
         <div class="margin-top">
           Les relations dans MongoDB indiquent comment divers documents sont reliés logiquement entre eux. Les relations
-          peuvent être modélisées via des approches incorporées et référencées. Ces relations peuvent être 1: 1, 1: N, N:
+          peuvent être modélisées via des approches incorporées et référencées. Ces relations peuvent être 1: 1, 1: N,
+          N:
           1 ou N: N.
         </div>
         <div class="margin-top">
@@ -960,6 +928,65 @@
         <div class="margin-top exemple-div">
           <div>{{relation6}}</div>
           <div>{{relation7}}</div>
+        </div>
+      </div>
+    </ng-container>
+    <ng-container *ngIf="route=='tutorial9'">
+      <div class="section-title">Sauvegarde et Restoration</div>
+      <div class="content-text">
+        Enfin, une base de données doit parfois être sauvegardée et restaurée. De la même manière que mysqldump permet
+        de faire cela chez MySQL, il est extrêmement facile de le faire avec Mongo. Dans sa forme la plus simple il
+        suffit d’appeler mongodump et c’est tout ! Le dump est par défaut situé dans le dossier courant. Évidemment,
+        quelques options bien pratiques sont à connaître :
+        <div class="margin-top">
+          <ul>
+            <li>-u: Préciser le nom d’utilisateur.</li>
+            <li>-p: Préciser le mot de passe.</li>
+            <li>-d: Indiquer la base de données à sauvegarder. Par défaut, le dump contient toutes les bases.</li>
+            <li>-c: Indiquer une ou plusieurs collections à sauvegarder.</li>
+            <li>-o: Préciser un chemin pour l’export. - envoie les données sur la sortie standard.</li>
+          </ul>
+        </div>
+        <div class="margin-top">
+          Pas de sauvegarde sans restauration, nous sommes d’accord ! On utilisera pour ça mongorestore adresse_du_dump.
+          Les options sont les mêmes que mongodump. -c permet de ne récupérer qu’une seule collection. -d indique la
+          base de données dans laquelle importer les données. Si elle n’existe pas, elle sera créé. Si vous importez
+          dans une base de données existante et qui n’est pas vide, mongorestore insère les nouvelles données sans
+          modifier celles existantes. Et dans le cas où un document à importer possède le même _id qu’un document
+          existant, ce dernier ne sera pas remplacé. Pour vider la base de données cible avant import, il existe
+          l’option --drop. Par Exemple:
+        </div>
+        <div class="subtitle-div">Import/Export d'une base de donnée</div>
+        <div class="alert-div">Ces Commandes s'utilisent sans la commande "mongo".
+          Pour les executer il faut ouvrir une nouvelle fenetre de commande
+        </div>
+        <div class="reponse-div">
+          <div>mongodump --host localhost --port 27017 --d (Nom de base de données) --o (Nom du fichier pour exporter
+            les données)
+          </div>
+          <div>mongorestore --host localhost --d (Nom de base de données) (le path du fichier contenant les données
+            exportés)
+          </div>
+        </div>
+        <div class="margin-top title-bigger-div">
+          Il est assez lourd de devoir taper à chaque fois db.(nom collection).commande, la console Mongo est aussi un
+          shell JavaScript, il est donc tout
+          à fait possible d’enregistrer des choses dans des variables !
+        </div>
+        <div class="reponse-div">
+          <div>t = db.(nom collection)</div>
+          <div>t.find().pretty()</div>
+        </div>
+
+        <div class="subtitle-div">Import/Export d'une collection</div>
+        <div class="alert-div">Ces Commandes s'utilisent sans la commande "mongo".
+          Pour les executer il faut ouvrir une nouvelle fenetre de commande
+        </div>
+        <div class="reponse-div">
+          <div>mongoimport --d (Nom de base de donnée) --c (nom de la collection --file (path du fichier
+            JSON).json
+          </div>
+          <div>mongoexport --d (Nom de base de donnée) --c (nom de la collection) --o (npm du ficher).json</div>
         </div>
       </div>
     </ng-container>
