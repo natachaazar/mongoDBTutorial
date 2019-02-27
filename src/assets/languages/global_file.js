@@ -8,7 +8,7 @@ export const Landing = {
   carousel_three_first_title: "Facile à ",
   carousel_three_second_title: "adapter",
   carousel_three_description: "MongoDB est livré avec des liaisons pour les principaux langages de programmation",
-  tutorial_btn: "Get Started"
+  tutorial_btn: "Mettre en Marche"
 };
 
 export const SideBar = [

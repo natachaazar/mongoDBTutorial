@@ -56,6 +56,9 @@ ul li::before {
   margin-right: 12px;
   background-position: center;
 }
+img{
+  max-width: 100%;
+}
 
 body::-webkit-scrollbar-track,
 div::-webkit-scrollbar-track,

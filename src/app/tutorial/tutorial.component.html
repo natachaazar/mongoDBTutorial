@@ -165,9 +165,11 @@
         </div>
         <div class="subtitle-div">Mongo DB Compass</div>
         <div class="margin-top">
-          MongoDB Compass est une interface graphique pour MongoDB. Elle permet d'explorez visuellement vos données, exécuter des
+          MongoDB Compass est une interface graphique pour MongoDB. Elle permet d'explorez visuellement vos données,
+          exécuter des
           requêtes ad hoc en quelques secondes, interagir avec vos données avec la fonctionnalité CRUD complète,
-          affichez et optimisez les performances de votre requête. Elle est disponible sous Linux, Mac ou Windows. Compass vous
+          affichez et optimisez les performances de votre requête. Elle est disponible sous Linux, Mac ou Windows.
+          Compass vous
           permet de prendre des décisions plus éclairées en matière d'indexation, de validation de documents, etc.
         </div>
         <div class="margin-top">
@@ -251,30 +253,25 @@
         <div class="reponse-div">db.dropDatabase()</div>
 
         <div class="subtitle-div">Insertion dans la collection</div>
-        <div class="reponse-div">
-          <div>{{insert}}</div>
-          <div>{{insertMany}}</div>
-        </div>
+        <div class="reponse-div">{{insert}}</div>
+        <div class="reponse-div">{{insertMany}}</div>
 
         <div class="subtitle-div">Obtenir le nombre de records dans une collection</div>
         <div class="reponse-div">db.(nom collection).count()</div>
 
         <div class="subtitle-div">Selection de la collection</div>
-        <div class="reponse-div">
-          <div>{{selection1}}</div>
-          <div>db.contacts.find().pretty()</div>
-          <div>{{selection}}.pretty()</div>
-          <div class="alert-div">On Utilise .pretty() avec la command find() pour ajuster la form JSOn des documents
-            pour pouvoir les lires
-          </div>
+        <div class="reponse-div">{{selection1}}</div>
+        <div class="reponse-div">db.contacts.find().pretty()</div>
+        <div class="reponse-div">{{selection}}.pretty()</div>
+        <div class="alert-div">On Utilise .pretty() avec la command find() pour ajuster la form JSOn des documents
+          pour pouvoir les lires
         </div>
+
         <div class="subtitle-div">Selection de la collection avec distinction</div>
-        <div class="reponse-div">
-          <div>{{distinction1}}</div>
+        <div class="reponse-div">{{distinction1}}</div>
+        <div class="margin-top exemple-div">
           <div>{{distinction2}}</div>
-        </div>
-        <div class="margin-top">
-          Le resultat est alors: {{resultatDistinct}}
+          <div class="margin-top">Le resultat est alors: {{resultatDistinct}}</div>
         </div>
 
         <div class="subtitle-div">Effacer tous les documents d'une collection</div>
@@ -285,31 +282,33 @@
         <div class="example-image-div margin-top"><img src="assets/images/mongo-images/removeOne.png"></div>
 
         <div class="subtitle-div">Mettre à jour une collection</div>
-        <div class="reponse-div">
-          <div>{{mettreAJou4}}</div>
-          <div>{{mettreAJour}}</div>
-          <div>{{mettreAJour2}} Pour remplacer le record avec un autre representant par l'obj JSON</div>
-          <div>{{mettreAJou3}} Pour mettre a jour tous les records ayant cette condition</div>
-        </div>
-        <div class="alert-div">$set est utilisé pour modifier certain attributs d'un record de la collection. C'est une
+        <div class="reponse-div">{{mettreAJou4}}</div>
+        <div class="reponse-div">{{mettreAJour}}</div>
+        <div class="alert-div margin-top">$set est utilisé pour modifier certain attributs d'un record de la collection.
+          C'est une
           des aggregation dans MongoDb
         </div>
-        <div class="alert-div">upsert:true est l'une des options de la commande update pour indiquer que si ce record
+        <div class="alert-div margin-top">upsert:true est l'une des options de la commande update pour indiquer que si
+          ce record
           n'existe pas je voudrais le créer
         </div>
-        <div class="alert-div">new:true est l'une des options de la commande update pour indiquer que je veux retourner
+        <div class="alert-div margin-top">new:true est l'une des options de la commande update pour indiquer que je veux
+          retourner
           le nouveau document
         </div>
+        <div class="margin-top title-bigger-div">Pour remplacer le record avec un autre representant par l'obj JSON
+        </div>
+        <div class="reponse-div">{{mettreAJour2}}</div>
+        <div class="margin-top title-bigger-div">Pour mettre a jour tous les records ayant cette condition</div>
+        <div class="reponse-div">{{mettreAJou3}}</div>
 
         <div class="subtitle-div">Statistiques d'une collection</div>
-        <div class="reponse-div">
-          <div>db.(nom collection).stats()</div>
-          <div>db.(nom collection).latencyStats()</div>
-          <div>db.(nom collection).dataSize()</div>
-          <div>db.(nom collection).storageSize()</div>
-          <div>db.(nom collection).totalSize()</div>
-          <div>db.(nom collection).totalIndexSize ()</div>
-        </div>
+        <div class="reponse-div">db.(nom collection).stats()</div>
+        <div class="reponse-div">db.(nom collection).latencyStats()</div>
+        <div class="reponse-div">db.(nom collection).dataSize()</div>
+        <div class="reponse-div">db.(nom collection).storageSize()</div>
+        <div class="reponse-div">db.(nom collection).totalSize()</div>
+        <div class="reponse-div">db.(nom collection).totalIndexSize()</div>
         <div class="example-image-div margin-top"><img style="width: 100%" src="assets/images/mongo-images/stats.png">
         </div>
       </div>
@@ -317,7 +316,7 @@
     <ng-container *ngIf="route=='tutorial4'">
       <div class="section-title">Recherches Avancées</div>
       <div class="content-text">
-        <div class="subtitle-div">Les Dates</div>
+        <div class="subtitle-div-bigger">Les Dates</div>
         <div class="margin-top">
           Lorsque l’on veut requêter une date dans Mongo, il faut créer un objet de type Date. Cela se fait soit
           directement via le constructeur
@@ -372,7 +371,7 @@
           tandis que si vous le préciser, il stocke tel quel.
         </div>
 
-        <div class="subtitle-div">Les Indexes</div>
+        <div class="subtitle-div-bigger">Les Indexes</div>
         <div class="margin-top">
           Comme dans MySQL, les index permettent d’accélérer les requêtes en évitant au moteur de base de données de
           devoir scanner tous
@@ -381,12 +380,10 @@
         <div class="margin-top">
           Voici les commandes les plus courantes :
         </div>
-        <div class="margin-top exemple-div">
-          {{exempleIndex1}} Pour créer un index
-        </div>
-        <div class="margin-top exemple-div">
-          {{exempleIndex2}} Pour créer un index et préciser que la valeur doit être unique
-        </div>
+        <div class="margin-top title-bigger-div">Pour créer un index</div>
+        <div class="margin-top reponse-div">{{exempleIndex1}}</div>
+        <div class="margin-top title-bigger-div">Pour créer un index et préciser que la valeur doit être unique</div>
+        <div class="margin-top reponse-div">{{exempleIndex2}}</div>
         <div class="margin-top">
           L’index ci-dessus considérera une absence de valeur comme une valeur. Il n’y a donc qu’un email qui pourra
           être vide ensuite
@@ -400,19 +397,19 @@
         <div class="margin-top">
           Voici quelques exemples d'index:
         </div>
-        <div class="margin-top exemple-div">
-          {{exempleIndex4}} Pour afficher les index d'une collection
+        <div class="subtitle-div-small">Pour afficher les index d'une collection</div>
+        <div class="margin-top reponse-div">{{exempleIndex4}}</div>
+        <div class="subtitle-div-small">Pour supprimer un index (le nom de l'index est fourni par getIndexes)</div>
+        <div class="margin-top reponse-div">{{exempleIndex5}}</div>
+        <div class="subtitle-div-small">Pour supprimer tous les indexes d'une collection</div>
+        <div class="margin-top reponse-div">
+          {{exempleIndex6}}
         </div>
-        <div class="margin-top exemple-div">
-          {{exempleIndex5}} Pour supprimer un index (le nom de l'index est fourni par getIndexes)
+        <div class="subtitle-div-small">Pour supprimer tous les indexes de la base</div>
+        <div class="margin-top reponse-div">
+          {{exempleIndex7}}
         </div>
-        <div class="margin-top exemple-div">
-          {{exempleIndex6}} Pour supprimer tous les indexes d'une collection
-        </div>
-        <div class="margin-top exemple-div">
-          {{exempleIndex7}} Pour supprimer tous les indexes de la base
-        </div>
-        <div class="subtitle-div">Les Projections</div>
+        <div class="subtitle-div-bigger">Les Projections</div>
         <div class="margin-top">
           La projection permet de sélectionner les informations à renvoyer. Si, par exemple, je m’intéresse uniquement
           au titre du film, à son
@@ -429,31 +426,35 @@
         </div>
         <div class="example-image-div margin-top"><img src="assets/images/mongo-images/projection2.PNG"></div>
 
-        <div class="subtitle-div">Le Triage des Resultats</div>
+        <div class="subtitle-div-bigger">Le Triage des Resultats</div>
         <div class="margin-top">
           Quand les recherches renvoient beaucoup de documents, il peut être utile de les trier.
           On dispose pour cela de la fonction sort qui va permettre de trier les résultats sur un champ par ordre
           croissant ou décroissant. On pourra aussi utiliser sort comme une option dans la requête find.
         </div>
-        <div class="margin-top exemple-div">
-          {{sortExemple1}} Pour trier les documents dans un ordre croissant selon l'attribut 1 de la collection. (-1
+        <div class="subtitle-div-small">Pour trier les documents dans un ordre croissant selon l'attribut 1 de la
+          collection. (-1
           Pour un ordre descendant)
         </div>
-        <div class="margin-top exemple-div">
-          {{sortExemple2}} sort dans les options de la commande find()
+        <div class="margin-top reponse-div">
+          {{sortExemple1}}
         </div>
-        <div class="subtitle-div">La Limitation des Resultats</div>
+        <div class="subtitle-div-small">sort dans les options de la commande find()</div>
+        <div class="margin-top reponse-div">{{sortExemple2}}</div>
+        <div class="subtitle-div-bigger">La Limitation des Resultats</div>
         <div class="margin-top">
           Quand les recherches renvoient beaucoup de documents, il peut être utile de les limiter et surtout en cas de
           pagination des données.
           On dispose pour cela de la fonction limit qui va permettre de limiter les résultats.
           On pourra aussi utiliser limit comme une option dans la requête find.
         </div>
-        <div class="margin-top exemple-div">
-          {{limitExample1}} Pour limiter les documents retourneés à 5.
+        <div class="subtitle-div-small">Pour limiter les documents retourneés à 5.</div>
+        <div class="margin-top reponse-div">
+          {{limitExample1}}
         </div>
-        <div class="margin-top exemple-div">
-          {{limitExample2}} limit dans les options de la commande find().
+        <div class="subtitle-div-small">limit dans les options de la commande find().</div>
+        <div class="margin-top reponse-div">
+          {{limitExample2}}
         </div>
       </div>
     </ng-container>
@@ -462,7 +463,7 @@
       <div class="content-text">
         La méthode find prend pour premier paramètre un objet JSON qu'elle va prendre comme critère de recherche.
         <div class="margin-top">
-          Si par exemple vous faites
+          Si par exemple vous faites:
         </div>
         <div class="margin-top exemple-div">
           {{criteresExemple}}
@@ -474,24 +475,34 @@
         <div class="margin-top title-bigger-div">
           On peut aller plus loin sur le critère de recherches en ajoutant des opérandes :
         </div>
-        <div class="margin-top title-bigger-div">Opérandes de "Find"</div>
-        <div class="margin-top title-bigger-div">Comparaison</div>
-        <div class="subtitle-div">$gt : plus grand que</div>
+        <div class="subtitle-div-bigger margin-top">Opérandes de "Find"</div>
+        <div class="subtitle-div-bigger margin-top">
+          <ul>
+            <li>Comparaison</li>
+          </ul>
+        </div>
+        <div class="subtitle-div margin-top">$gt :</div>
+        <div>plus grand que</div>
         <div class="reponse-div">{{gt}}</div>
 
-        <div class="subtitle-div">$lt : plus petit que</div>
+        <div class="subtitle-div">$lt :</div>
+        <div>plus petit que</div>
         <div class="reponse-div">{{lt}}</div>
 
-        <div class="subtitle-div">$gte : plus grand ou égal à</div>
+        <div class="subtitle-div">$gte :</div>
+        <div>plus grand ou égal à</div>
         <div class="reponse-div">{{gte}}</div>
 
-        <div class="subtitle-div">$lte: plus petit ou égal à</div>
+        <div class="subtitle-div">$lte :</div>
+        <div>plus petit ou égal à</div>
         <div class="reponse-div">{{lte}}</div>
 
-        <div class="subtitle-div">$eq: égal à</div>
+        <div class="subtitle-div">$eq :</div>
+        <div>égal à</div>
         <div class="reponse-div">{{eg}}</div>
 
-        <div class="subtitle-div">$ne: non égal à</div>
+        <div class="subtitle-div">$ne :</div>
+        <div>non égal à</div>
         <div class="reponse-div">{{neg}}</div>
 
         <div class="margin-top alert-div">
@@ -499,50 +510,71 @@
           caractères, l'ordre appliqué est l'ordre alphabétique.
         </div>
 
-        <div class="margin-top title-bigger-div">Logical</div>
-        <div class="subtitle-div">$or : pour récupérer les documents qui correspondent à 2 critères différents</div>
+        <div class="subtitle-div-bigger margin-top">
+          <ul>
+            <li>Logical</li>
+          </ul>
+        </div>
+        <div class="subtitle-div margin-top">$or :</div>
+        <div>pour récupérer les documents qui correspondent à 2 critères différents</div>
         <div class="reponse-div">{{or}}</div>
 
-        <div class="subtitle-div">$and : pour cumuler des critères</div>
+        <div class="subtitle-div">$and:</div>
+        <div>pour cumuler des critères</div>
         <div class="reponse-div">{{and}}</div>
 
-        <div class="subtitle-div">$not : pour reverser la condition</div>
+        <div class="subtitle-div">$not :</div>
+        <div>pour reverser la condition</div>
         <div class="reponse-div">{{not}}</div>
 
-        <div class="subtitle-div">$nor : pour obtenir la condition logique NOR</div>
+        <div class="subtitle-div">$nor :</div>
+        <div>pour obtenir la condition logique NOR</div>
         <div class="reponse-div">{{nor}}</div>
 
-        <div class="margin-top title-bigger-div">Element</div>
+        <div class="subtitle-div-bigger">
+          <ul>
+            <li>Element</li>
+          </ul>
+        </div>
 
-        <div class="subtitle-div">$exist : pour récuperer les documents qui ont le critère qui existe et non null</div>
+        <div class="subtitle-div margin-top">$exist :</div>
+        <div>pour récuperer les documents qui ont le critère qui existe et non null</div>
         <div class="reponse-div">{{exists}}</div>
 
-        <div class="subtitle-div">$type : pour récuperer les documents qui ont le critère correspondant à un type
-          donné
-        </div>
+        <div class="subtitle-div">$type :</div>
+        <div>pour récuperer les documents qui ont le critère correspondant à un type donné</div>
         <div class="reponse-div">{{type}}</div>
 
-        <div class="title-bigger-div margin-top">
+        <div class="subtitle-div-small">
           Les Types disponibles dans Mongo DB sont:
         </div>
         <div class="example-image-div margin-top"><img src="assets/images/mongo-images/types1.PNG"></div>
         <div class="example-image-div margin-top"><img src="assets/images/mongo-images/types2.PNG"></div>
 
-        <div class="margin-top title-bigger-div">Evaluation</div>
-        <div class="subtitle-div">$regex : pour récuperer les documents qui ont le critère correspondant à l'expression
-          régulière donnée
+        <div class="subtitle-div-bigger">
+          <ul>
+            <li>Evaluation</li>
+          </ul>
         </div>
+        <div class="subtitle-div">$regex :</div>
+        <div>pour récuperer les documents qui ont le critère correspondant à l'expression régulière donnée</div>
         <div class="reponse-div">{{regex}}</div>
 
-        <div class="margin-top title-bigger-div">Array</div>
-
-        <div class="subtitle-div">$in : pour récuperer les documents parmi le tableau des valeurs</div>
+        <div class="subtitle-div-bigger">
+          <ul>
+            <li>Array</li>
+          </ul>
+        </div>
+        <div class="subtitle-div">$in :</div>
+        <div>pour récuperer les documents parmi le tableau des valeurs</div>
         <div class="reponse-div">{{inCritere}}</div>
 
-        <div class="subtitle-div">$nin : pour récuperer tous les documents sauf ceux parmi le tableau des valeurs</div>
+        <div class="subtitle-div">$nin :</div>
+        <div>pour récuperer tous les documents sauf ceux parmi le tableau des valeurs<</div>
         <div class="reponse-div">{{ninCritere}}</div>
 
-        <div class="subtitle-div">$all : pour cumuler des critères correspondant au tableau des valeurs.</div>
+        <div class="subtitle-div">$all :</div>
+        <div>pour cumuler des critères correspondant au tableau des valeurs.</div>
         <div class="reponse-div">{{all}}</div>
         <div class="alert-div margin-top">
           Cet operand resssemble à l'operand $and mais avec les mêmes critères, par exemple:
@@ -550,54 +582,73 @@
         <div class="reponse-div">
           {{allSimilar}}
         </div>
-        <div class="subtitle-div">$size : pour retourner les records dont la liste correspond à une size donnée</div>
+        <div class="subtitle-div">$size :</div>
+        <div>pour retourner les records dont la liste correspond à une size donnée</div>
         <div class="reponse-div">{{size}}</div>
 
-        <div class="margin-top title-bigger-div">Opérandes de "Update"</div>
-        <div class="margin-top title-bigger-div">Element</div>
-        <div class="subtitle-div">$min : pour mettre à jour la valeur du champ avec la valeur spécifiée si celle-ci est
-          inférieure à la valeur actuelle du champ.
+        <div class="subtitle-div-bigger">Opérandes de "Update</div>
+        <div class="subtitle-div-bigger margin-top">
+          <ul>
+            <li>Element</li>
+          </ul>
+        </div>
+        <div class="subtitle-div margin-top">$min :</div>
+        <div>pour mettre à jour la valeur du champ avec la valeur spécifiée si celle-ci est inférieure à la valeur
+          actuelle du champ.
         </div>
         <div class="reponse-div">{{min}}</div>
 
-        <div class="subtitle-div">$max : pour mettre à jour la valeur du champ avec la valeur spécifiée si celle-ci est
-          supérieure à la valeur actuelle du champ.
+        <div class="subtitle-div">$max :</div>
+        <div>pour mettre à jour la valeur du champ avec la valeur spécifiée si celle-ci est supérieure à la valeur
+          actuelle du champ.
         </div>
         <div class="reponse-div">{{max}}</div>
 
-        <div class="subtitle-div">$set : pour remplacer la valeur d'un champ par la valeur spécifiée.
-        </div>
+        <div class="subtitle-div">$set :</div>
+        <div>pour remplacer la valeur d'un champ par la valeur spécifiée.</div>
         <div class="reponse-div">{{set}}</div>
 
-        <div class="subtitle-div">$unset : pour supprimer un champ particulier.
-        </div>
+        <div class="subtitle-div">$unset :</div>
+        <div>pour supprimer un champ particulier.</div>
         <div class="reponse-div">{{unset}}</div>
 
-        <div class="margin-top title-bigger-div">Array</div>
+        <div class="subtitle-div-bigger">
+          <ul>
+            <li>Array</li>
+          </ul>
+        </div>
 
-        <div class="subtitle-div">$pop : pour supprimer le premier ou le dernier élément d'un tableau. Passez $ pop une
+        <div class="subtitle-div">$pop :</div>
+        <div>pour supprimer le premier ou le dernier élément d'un tableau. Passez $ pop une
           valeur de -1 pour supprimer le premier élément d'un tableau et 1 pour supprimer le dernier élément d'un
           tableau.
         </div>
         <div class="reponse-div">{{pop}}</div>
 
-        <div class="subtitle-div">$pull : pour supprimer d'un tableau existant toutes les occurrences d'une valeur ou de
+        <div class="subtitle-div">$pull :</div>
+        <div>pour supprimer d'un tableau existant toutes les occurrences d'une valeur ou de
           valeurs correspondant à une condition spécifiée.
         </div>
         <div class="reponse-div">{{pull}}</div>
 
-        <div class="subtitle-div">$push : pour ajouter une valeur spécifiée à un tableau.
-        </div>
+        <div class="subtitle-div">$push :</div>
+        <div>pour ajouter une valeur spécifiée à un tableau.</div>
         <div class="reponse-div">{{push}}</div>
 
-        <div class="subtitle-div">$addToSet : pour ajouter une valeur à un tableau sauf si la valeur est déjà présente,
+        <div class="subtitle-div">$addToSet :</div>
+        <div>pour ajouter une valeur à un tableau sauf si la valeur est déjà présente,
           auquel cas $ addToSet ne fait rien pour ce tableau.
         </div>
         <div class="reponse-div">{{addToSet}}</div>
 
-        <div class="margin-top title-bigger-div">Modificateurs</div>
+        <div class="subtitle-div-bigger">
+          <ul>
+            <li>Modificateurs</li>
+          </ul>
+        </div>
 
-        <div class="subtitle-div">$each : Le modificateur $ each est disponible pour une utilisation avec l'opérateur $
+        <div class="subtitle-div margin-top">$each :</div>
+        <div>Le modificateur $ each est disponible pour une utilisation avec l'opérateur $
           addToSet et l'opérateur $ push.
         </div>
         <div class="reponse-div">{{each}}</div>
@@ -624,7 +675,7 @@
           Cette fonction aggregate prend une liste d’opérateurs en paramètre. Il existe plusieurs types d’opérateurs de
           manipulation de données. Nous allons nous concentrer par la suite sur les principaux :
         </div>
-        <div class="subtitle-div">{{matchExemple}}</div>
+        <div class="subtitle-div-bigger">{{matchExemple}}</div>
         <div class="margin-top">
           C’est le plus simple, il correspond au premier paramètre de la requête find que nous avons fait jusqu’ici. Il
           permet donc de filtrer le contenu d’une collection.
@@ -632,7 +683,7 @@
         <div class="exemple-div margin-top">
           {{matchExemple1}}
         </div>
-        <div class="subtitle-div">{{projectExemple}}</div>
+        <div class="subtitle-div-bigger">{{projectExemple}}</div>
         <div class="margin-top">
           C’est le second paramètre du find. Il donne le format de sortie des documents (projection). Il peut par
           ailleurs être utilisé pour changer le format d’origine.
@@ -640,14 +691,14 @@
         <div class="exemple-div margin-top">
           {{projectExemple2}}
         </div>
-        <div class="subtitle-div">{{sortExemple}}</div>
+        <div class="subtitle-div-bigger">{{sortExemple}}</div>
         <div class="margin-top">
           Trier le résultat final sur les valeurs d’une clé choisi.
         </div>
         <div class="exemple-div margin-top">
           {{sortExemple3}}
         </div>
-        <div class="subtitle-div">{{groupExemple1}}</div>
+        <div class="subtitle-div-bigger">{{groupExemple1}}</div>
         <div class="margin-top">
           C’est l’opération d’agrégation. Il va permettre de grouper les documents par valeur, et appliquer des
           fonctions d’agrégat. La sortie est une nouvelle collection avec les résultats de l’agrégation. (comme un group
@@ -668,7 +719,7 @@
         <div class="exemple-div margin-top">
           {{groupExemple3}}
         </div>
-        <div class="subtitle-div">{{unwindExemple}}</div>
+        <div class="subtitle-div-bigger">{{unwindExemple}}</div>
         <div class="margin-top">
           $sort permet de trier les resultats par ordre croissant ou decroissant
         </div>
@@ -692,14 +743,14 @@
         </div>
         <div class="exemple-div margin-top">{{unwindExemple2}}
         </div>
-        <div class="subtitle-div">{{limitExemple}}</div>
+        <div class="subtitle-div-bigger">{{limitExemple}}</div>
         <div class="margin-top">
           Cet opérand permet de limiter les resultats retournés
         </div>
         <div class="margin-top exemple-div">
           {{limitExemple2}}
         </div>
-        <div class="subtitle-div">{{skip}}</div>
+        <div class="subtitle-div-bigger">{{skip}}</div>
         <div class="margin-top">
           Cet opérand permet de sauter un certains nombre de records avant de retourner les autres
         </div>
@@ -707,7 +758,7 @@
           {{skip2}}
         </div>
 
-        <div class="subtitle-div">{{lookup}}</div>
+        <div class="subtitle-div-bigger">{{lookup}}</div>
         <div class="margin-top">
           Cet aggregation correspond à la jointure dans SQL. Pour effectuer une correspondance d'égalité entre un champ
           des documents d'entrée et un champ des documents de
@@ -729,7 +780,7 @@
           {{lookupExemple3}}
         </div>
 
-        <div class="margin-top title-bigger-div">Les expressions d'aggregations</div>
+        <div class="subtitle-div-bigger">Les expressions d'aggregations</div>
         <div class="subtitle-div">$sum</div>
         <div class="margin-top">
           Résume la valeur définie de tous les documents de la collection.
@@ -778,25 +829,33 @@
           </div>
         </div>
 
-        <div class="margin-top title-bigger-div">
+        <div class="title-bigger-div" style="margin-top: 25px">
           Enfin, Ces tableaux représente la difference entre SQL et les aggregations dans MongoDB
         </div>
         <div class="example-image-div margin-top"><img src="assets/images/mongo-images/sql.PNG"></div>
 
-        <div class="example-image-div margin-top"><img src="assets/images/mongo-images/sql1.PNG"></div>
-        <div class="example-image-div margin-top"><img src="assets/images/mongo-images/sql3.PNG"></div>
-        <div class="example-image-div margin-top"><img src="assets/images/mongo-images/sql4.PNG"></div>
-        <div class="example-image-div margin-top"><img src="assets/images/mongo-images/sql5.PNG"></div>
-        <div class="example-image-div margin-top"><img src="assets/images/mongo-images/sql6.PNG"></div>
-        <div class="example-image-div margin-top"><img src="assets/images/mongo-images/sql7.PNG"></div>
-        <div class="example-image-div margin-top"><img src="assets/images/mongo-images/sql8.PNG"></div>
-        <div class="example-image-div margin-top"><img src="assets/images/mongo-images/sql9.PNG"></div>
+        <div class="example-image-div margin-top"><img style="margin-left: -22px"
+                                                       src="assets/images/mongo-images/sql1.PNG"></div>
+        <div class="example-image-div margin-top"><img style="margin-left: -22px"
+                                                       src="assets/images/mongo-images/sql3.PNG"></div>
+        <div class="example-image-div margin-top"><img style="margin-left: -22px"
+                                                       src="assets/images/mongo-images/sql4.PNG"></div>
+        <div class="example-image-div margin-top"><img style="margin-left: -22px"
+                                                       src="assets/images/mongo-images/sql5.PNG"></div>
+        <div class="example-image-div margin-top"><img style="margin-left: -22px"
+                                                       src="assets/images/mongo-images/sql6.PNG"></div>
+        <div class="example-image-div margin-top"><img style="margin-left: -22px"
+                                                       src="assets/images/mongo-images/sql7.PNG"></div>
+        <div class="example-image-div margin-top"><img style="margin-left: -22px"
+                                                       src="assets/images/mongo-images/sql8.PNG"></div>
+        <div class="example-image-div margin-top"><img style="margin-left: -22px"
+                                                       src="assets/images/mongo-images/sql9.PNG"></div>
       </div>
     </ng-container>
     <ng-container *ngIf="route=='tutorial7'">
       <div class="section-title">Administration</div>
       <div class="content-text">
-        <div class="subtitle-div">Gestion des utilisateurs</div>
+        <div class="subtitle-div-bigger">Gestion des utilisateurs</div>
         <div class="margin-top">
           Par défaut, Mongo est accessible sans authentification et permet toutes les actions sur la base. Il est
           évident que dès lorsque que votre base est sur un serveur connecté sur Internet et que vous passez en
@@ -852,7 +911,7 @@
         </div>
         <div class="example-image-div margin-top"><img src="assets/images/mongo-images/admin5.PNG"></div>
 
-        <div class="margin-top subtitle-div">Connexion</div>
+        <div class="subtitle-div-bigger">Connexion</div>
         <div class="margin-top">
           Une fois les utilisateurs créés et la base paramétrée pour passer en mode « authorization », il faudra que
           vous vous connectiez avec vos identifiants, sinon, vous serez jetés ! Pour ce faire, il faut préciser le login
@@ -864,7 +923,7 @@
     <ng-container *ngIf="route=='tutorial8'">
       <div class="section-title">Les Relation Dans MongoDB</div>
       <div class="content-text">
-        <div class="subtitle-div">ObjectID</div>
+        <div class="subtitle-div-bigger">ObjectID</div>
         <div class="margin-top">
           Un ObjectId est un type BSON de 12 octets ayant la structure suivante
         </div>
@@ -900,7 +959,7 @@
         <div class="margin-top exemple-div">
           {{relation2}}
         </div>
-        <div class="margin-top subtitle-div">Modélisation des relations incorporées</div>
+        <div class="subtitle-div-bigger">Modélisation des relations incorporées</div>
         <div class="margin-top">
           Dans l'approche intégrée, nous allons incorporer le document d'adresse dans le document utilisateur.
         </div>
@@ -921,7 +980,7 @@
           L'inconvénient est que si la taille du document incorporé continue de croître de manière excessive, cela peut
           avoir un impact sur les performances de lecture / écriture.
         </div>
-        <div class="margin-top subtitle-div">Modélisation des relations référencées</div>
+        <div class="subtitle-div-bigger">Modélisation des relations référencées</div>
         <div class="margin-top">
           C'est l'approche de la conception d'une relation normalisée. Dans cette approche, les documents utilisateur et
           adresse seront conservés séparément mais le document utilisateur contiendra un champ qui référencera le champ
@@ -968,17 +1027,17 @@
           existant, ce dernier ne sera pas remplacé. Pour vider la base de données cible avant import, il existe
           l’option --drop. Par Exemple:
         </div>
-        <div class="subtitle-div">Import/Export d'une base de donnée</div>
+        <div class="subtitle-div-bigger">Import/Export d'une base de donnée</div>
         <div class="alert-div">Ces Commandes s'utilisent sans la commande "mongo".
           Pour les executer il faut ouvrir une nouvelle fenetre de commande
         </div>
-        <div class="reponse-div">
-          <div>mongodump --host localhost --port 27017 --d (Nom de base de données) --o (Nom du fichier pour exporter
-            les données)
-          </div>
-          <div>mongorestore --host localhost --d (Nom de base de données) (le path du fichier contenant les données
-            exportés)
-          </div>
+        <div class="reponse-div">mongodump --host localhost --port 27017 --d (Nom de base de données) --o (Nom du
+          fichier pour exporter
+          les données)
+        </div>
+        <div class="reponse-div">mongorestore --host localhost --d (Nom de base de données) (le path du fichier
+          contenant les données
+          exportés)
         </div>
         <div class="margin-top title-bigger-div">
           Il est assez lourd de devoir taper à chaque fois db.(nom collection).commande, la console Mongo est aussi un
@@ -990,16 +1049,14 @@
           <div>t.find().pretty()</div>
         </div>
 
-        <div class="subtitle-div">Import/Export d'une collection</div>
+        <div class="subtitle-div-bigger">Import/Export d'une collection</div>
         <div class="alert-div">Ces Commandes s'utilisent sans la commande "mongo".
           Pour les executer il faut ouvrir une nouvelle fenetre de commande
         </div>
-        <div class="reponse-div">
-          <div>mongoimport --d (Nom de base de donnée) --c (nom de la collection --file (path du fichier
+        <div class="reponse-div">mongoimport --d (Nom de base de donnée) --c (nom de la collection --file (path du fichier
             JSON).json
-          </div>
-          <div>mongoexport --d (Nom de base de donnée) --c (nom de la collection) --o (npm du ficher).json</div>
         </div>
+        <div class="reponse-div">mongoexport --d (Nom de base de donnée) --c (nom de la collection) --o (npm du ficher).json</div>
       </div>
     </ng-container>
     <ng-container *ngIf="route=='tutorial10'">
@@ -1030,7 +1087,8 @@
         </div>
         <div class="question-div">
           <div class="question-image"></div>
-          Pourquoi utiliser MongoDB?</div>
+          Pourquoi utiliser MongoDB?
+        </div>
         <div class="margin-top reponse-div">
           <ul>
             <li>Stockage orienté document - Les données sont stockées sous la forme de documents de style JSON.</li>
@@ -1044,7 +1102,8 @@
         </div>
         <div class="question-div">
           <div class="question-image"></div>
-          Où utiliser MongoDB?</div>
+          Où utiliser MongoDB?
+        </div>
         <div class="margin-top reponse-div">
           <ul>
             <li>Big Data</li>
