@@ -1,12 +1,12 @@
 @import "~bootstrap/dist/css/bootstrap.css";
 .logo-sidenav{
   height: 50px;
-  background-image: url("../../assets/images/mongo-images/mongo-logo.png");
+  background-image: url("../../assets/images/mongo-images/mongo-sidemenu.png");
   background-repeat: no-repeat;
-  background-size: contain;
+  background-size: 65%;
   width: 100%;
   margin-bottom: 20px;
-  background-position: bottom;
+  background-position: center;
 }
 .sidebar-content{
   width: 255px;
@@ -79,5 +79,12 @@
   background-color: black;
   margin-right: 12px;
   margin-left: 12px;
+}
+.version-div{
+  position: absolute;
+  bottom: 5px;
+  right: 17%;
+  font-weight: bold;
+  font-size: 14px;
 }
 

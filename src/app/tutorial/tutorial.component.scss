@@ -21,13 +21,14 @@
   padding: 16px;
   position: relative;
   box-shadow: 0 0 10px 0 rgba(#000, 0.5);
+  border-radius: 15px;
   color: white;
 }
 .question-image{
-  background-image:url("../../assets/images/mongo-images/question.png");
+  background-image:url("../../assets/images/mongo-images/mark1.png");
   background-repeat: no-repeat;
-  width: 26px;
-  height: 26px;
+  width: 30px;
+  height: 30px;
   background-size: contain;
   background-position: center;
   position: absolute;
@@ -45,6 +46,7 @@
   padding: 15px;
   white-space:pre-wrap;
   box-shadow: 0 0 10px 0 rgba(#000, 0.5);
+  border-radius: 15px;
 }
 .margin-top{
   margin-top: 8px !important;
@@ -60,6 +62,7 @@
   font-size: 15px;
   white-space:pre-wrap;
   box-shadow: 0 0 10px 0 rgba(#000, 0.5);
+  border-radius: 15px;
 }
 .subtitle-div-small{
   color: #499b45;
