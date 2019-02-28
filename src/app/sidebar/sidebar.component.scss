@@ -10,12 +10,12 @@
 }
 .sidebar-content{
   width: 255px;
-  background-image: url("../../assets/images/mongo-images/bgrn2.jpg");
+  //background-image: url("../../assets/images/mongo-images/bgrn2.jpg");
+  background-image: url("../../assets/images/mongo-images/imagebg4.jpg");
   height: 100%;
   background-repeat: no-repeat;
   background-size: cover;
   padding-top: 10px;
-  background-position: bottom
 }
 
 .side-menu-wrapper{
@@ -82,7 +82,7 @@
 }
 .version-div{
   position: absolute;
-  bottom: 5px;
+  bottom: 10px;
   right: 17%;
   font-weight: bold;
   font-size: 14px;
