@@ -50,7 +50,7 @@ export class TutorialComponent implements OnInit {
   distinction1: string = 'db.contacts.distinct({condition},{projection},{options})';
   distinction2: string = 'db.contacts.distinct( "sizes" )';
   resultatDistinct: string = '[S, M, L]';
-  selection: string = 'db.contacts.find({ attribut1: \'quentin\', attribut2: \'busuttil\' })';
+  selection: string = 'db.contacts.find({ attribut1: \'quentin\', attribut2: \'busuttil\' }).pretty()';
   removeAll: string = 'db.(nom collection).remove({condition})';
   effacerUn: string = 'db.(nom collection).remove({attribut1:\'Quentin\'})';
   mettreAJour: string = 'db.(nom collection).update({attribut1:x}, { $set: { "attribut2": "Nouveau Nom" }},{new:true, upsert:true})';
@@ -288,6 +288,8 @@ export class TutorialComponent implements OnInit {
     '}';
   relation6: string = '>var result = db.users.findOne({"name":"Tom Benzamin"},{"address_ids":1})';
   relation7: string = '>var addresses = db.address.find({"_id":{"$in":result["address_ids"]}})';
+  createDB = 'db.createCollection("Nom Collection")';
+  renommerColl = 'db.(nom collection).renameCollection("nouveau nom")';
 
   constructor() {
   }

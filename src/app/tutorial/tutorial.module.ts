@@ -5,6 +5,7 @@ import {TutorialRoutingModule} from './tutorial.routing';
 import {SharedModule} from '../modules/shared/shared.module';
 import {SideBarModule} from '../sidebar/sidebar.module';
 import {MatSidenavModule} from '@angular/material';
+import {ClipboardModule} from "ngx-clipboard";
 
 @NgModule({
   imports: [
@@ -12,7 +13,8 @@ import {MatSidenavModule} from '@angular/material';
     TutorialRoutingModule,
     SharedModule,
     MatSidenavModule,
-    SideBarModule
+    SideBarModule,
+    ClipboardModule
   ],
   declarations: [TutorialComponent]
 })

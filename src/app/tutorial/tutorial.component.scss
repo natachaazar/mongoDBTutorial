@@ -47,6 +47,7 @@
   white-space:pre-wrap;
   box-shadow: 0 0 10px 0 rgba(#000, 0.5);
   border-radius: 15px;
+  position: relative;
 }
 .margin-top{
   margin-top: 8px !important;
@@ -91,4 +92,17 @@
 }
 .example-image-div{
 
+}
+.copy-word{
+  background-image: url("../../assets/images/mongo-images/copy.png");
+  position: absolute;
+  bottom: 2px;
+  right: 5px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  background-position: center;
+  padding: 5px;
 }
