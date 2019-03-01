@@ -5,41 +5,61 @@ export const Landing = {
   carousel_two_first_title: "Manipulation des ",
   carousel_two_second_title: "données",
   carousel_two_description: "Examiner les fonctionnalités de requêtage",
-  carousel_three_first_title: "Manipulation des ",
-  carousel_three_second_title: "données",
+  carousel_three_first_title: "Facile à ",
+  carousel_three_second_title: "adapter",
   carousel_three_description: "MongoDB est livré avec des liaisons pour les principaux langages de programmation",
-  tutorial_btn: "Get Started"
+  tutorial_btn: "Mettre en Marche"
 };
 
 export const SideBar = [
   {
-    title: 'Tutorial',
+    title: 'Definition et Installation',
     route: 'tutorial1',
     selected:true
   },
   {
-    title: 'Tutorial 2',
+    title: 'Avantages',
+    route: 'tutorial10',
+    selected:false
+  },
+  {
+    title: 'Notions de collections',
     route: 'tutorial2',
     selected:false
   },
   {
-    title: 'Tutorial 3',
+    title: 'Commandes Essentielles',
     route: 'tutorial3',
     selected:false
   },
   {
-    title: 'Tutorial 4',
+    title: 'Recherches Avancées',
     route: 'tutorial4',
     selected:false
   },
   {
-    title: 'Tutorial 5',
+    title: 'Critères de recherche',
     route: 'tutorial5',
     selected:false
   },
   {
-    title: 'Tutorial 6',
+    title: 'Les Aggregations',
     route: 'tutorial6',
+    selected:false
+  },
+  {
+    title: 'Administration',
+    route: 'tutorial7',
+    selected:false
+  },
+  {
+    title: 'Les Relations',
+    route: 'tutorial8',
+    selected:false
+  },
+  {
+    title: 'Sauvegarde et restauration',
+    route: 'tutorial9',
     selected:false
   }
 ];
