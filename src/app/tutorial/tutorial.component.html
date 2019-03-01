@@ -226,83 +226,83 @@
       <div class="content-text">
         <div class="subtitle-div">Afficher toutes les base de données</div>
         <div class="reponse-div">
-          <div class="copy-word" title="Copy To Clipboard" ngxClipboard [cbContent]="'show dbs'"></div>
+          <div class="copy-word" title="Copy To Clipboard" ngxClipboard [cbContent]="'show dbs'" (click)="showCustom()"></div>
           show dbs
         </div>
         <div class="example-image-div margin-top"><img src="assets/images/mongo-images/showDB.PNG"></div>
 
         <div class="subtitle-div">Utiliser la base "newbase"</div>
         <div class="reponse-div">
-          <div class="copy-word" title="Copy To Clipboard" ngxClipboard [cbContent]="'use newbase'"></div>
+          <div class="copy-word" title="Copy To Clipboard" ngxClipboard [cbContent]="'use newbase'" (click)="showCustom()"></div>
           use newbase
         </div>
         <div class="example-image-div margin-top"><img src="assets/images/mongo-images/useDB.PNG"></div>
 
         <div class="subtitle-div">Voir dans quelle base on est</div>
         <div class="reponse-div">
-          <div class="copy-word" title="Copy To Clipboard" ngxClipboard [cbContent]="'db'"></div>
+          <div class="copy-word" title="Copy To Clipboard" ngxClipboard [cbContent]="'db'" (click)="showCustom()"></div>
           db
         </div>
 
         <div class="subtitle-div">Afficher les collections de la base</div>
         <div class="reponse-div">
-          <div class="copy-word" title="Copy To Clipboard" ngxClipboard [cbContent]="'show collections'"></div>
+          <div class="copy-word" title="Copy To Clipboard" ngxClipboard [cbContent]="'show collections'" (click)="showCustom()"></div>
           show collections
         </div>
         <div class="example-image-div margin-top"><img src="assets/images/mongo-images/showcollections.png"></div>
 
         <div class="subtitle-div">Créer une collection</div>
         <div class="reponse-div">
-          <div class="copy-word" title="Copy To Clipboard" ngxClipboard [cbContent]="createDB"></div>
+          <div class="copy-word" title="Copy To Clipboard" ngxClipboard [cbContent]="createDB" (click)="showCustom()"></div>
           {{createDB}}
         </div>
 
         <div class="subtitle-div">Renommer une collection</div>
         <div class="reponse-div">
-          <div class="copy-word" title="Copy To Clipboard" ngxClipboard [cbContent]="renommerColl"></div>
+          <div class="copy-word" title="Copy To Clipboard" ngxClipboard [cbContent]="renommerColl" (click)="showCustom()"></div>
           {{renommerColl}}
         </div>
         <div class="example-image-div margin-top"><img src="assets/images/mongo-images/renameColl.png"></div>
 
         <div class="subtitle-div">Effacer une collection</div>
         <div class="reponse-div">
-          <div class="copy-word" title="Copy To Clipboard" ngxClipboard [cbContent]="'db.(nom collection).drop()'"></div>
+          <div class="copy-word" title="Copy To Clipboard" ngxClipboard [cbContent]="'db.(nom collection).drop()'" (click)="showCustom()"></div>
           db.(nom collection).drop()
         </div>
 
         <div class="subtitle-div">Effacer la base dans laquelle on est</div>
         <div class="reponse-div">
-          <div class="copy-word" title="Copy To Clipboard" ngxClipboard [cbContent]="'db.dropDatabase()'"></div>
+          <div class="copy-word" title="Copy To Clipboard" ngxClipboard [cbContent]="'db.dropDatabase()'" (click)="showCustom()"></div>
           db.dropDatabase()
         </div>
 
         <div class="subtitle-div">Insertion dans la collection</div>
         <div class="reponse-div">
-          <div class="copy-word" title="Copy To Clipboard" ngxClipboard [cbContent]="insert"></div>
+          <div class="copy-word" title="Copy To Clipboard" ngxClipboard [cbContent]="insert" (click)="showCustom()"></div>
           {{insert}}
         </div>
         <div class="reponse-div">
-          <div class="copy-word" title="Copy To Clipboard" ngxClipboard [cbContent]="insertMany"></div>
+          <div class="copy-word" title="Copy To Clipboard" ngxClipboard [cbContent]="insertMany" (click)="showCustom()"></div>
           {{insertMany}}
         </div>
 
         <div class="subtitle-div">Obtenir le nombre de records dans une collection</div>
         <div class="reponse-div">
-          <div class="copy-word" title="Copy To Clipboard" ngxClipboard [cbContent]="'db.(nom collection).count()'"></div>
+          <div class="copy-word" title="Copy To Clipboard" ngxClipboard [cbContent]="'db.(nom collection).count()'" (click)="showCustom()"></div>
           db.(nom collection).count()
         </div>
 
         <div class="subtitle-div">Selection de la collection</div>
         <div class="reponse-div">
-          <div class="copy-word" title="Copy To Clipboard" ngxClipboard [cbContent]="selection1"></div>
+          <div class="copy-word" title="Copy To Clipboard" ngxClipboard [cbContent]="selection1" (click)="showCustom()"></div>
           {{selection1}}
         </div>
         <div class="reponse-div">
-          <div class="copy-word" title="Copy To Clipboard" ngxClipboard [cbContent]="'db.contacts.find().pretty()'"></div>
+          <div class="copy-word" title="Copy To Clipboard" ngxClipboard [cbContent]="'db.contacts.find().pretty()'" (click)="showCustom()"></div>
           db.contacts.find().pretty()
         </div>
         <div class="reponse-div">
-          <div class="copy-word" title="Copy To Clipboard" ngxClipboard [cbContent]="selection"></div>
+          <div class="copy-word" title="Copy To Clipboard" ngxClipboard [cbContent]="selection" (click)="showCustom()"></div>
           {{selection}}
         </div>
         <div class="alert-div">On Utilise .pretty() avec la command find() pour ajuster la form JSOn des documents
@@ -311,7 +311,7 @@
 
         <div class="subtitle-div">Selection de la collection avec distinction</div>
         <div class="reponse-div">
-          <div class="copy-word" title="Copy To Clipboard" ngxClipboard [cbContent]="distinction1"></div>
+          <div class="copy-word" title="Copy To Clipboard" ngxClipboard [cbContent]="distinction1" (click)="showCustom()"></div>
           {{distinction1}}
         </div>
         <div class="margin-top exemple-div">
@@ -321,24 +321,24 @@
 
         <div class="subtitle-div">Effacer tous les documents d'une collection</div>
         <div class="reponse-div">
-          <div class="copy-word" title="Copy To Clipboard" ngxClipboard [cbContent]="removeAll"></div>
+          <div class="copy-word" title="Copy To Clipboard" ngxClipboard [cbContent]="removeAll" (click)="showCustom()"></div>
           {{removeAll}}
         </div>
 
         <div class="subtitle-div">Effacer un document d'une collection</div>
         <div class="reponse-div">
-          <div class="copy-word" title="Copy To Clipboard" ngxClipboard [cbContent]="effacerUn"></div>
+          <div class="copy-word" title="Copy To Clipboard" ngxClipboard [cbContent]="effacerUn" (click)="showCustom()"></div>
           {{effacerUn}}
         </div>
         <div class="example-image-div margin-top"><img src="assets/images/mongo-images/removeOne.png"></div>
 
         <div class="subtitle-div">Mettre à jour une collection</div>
         <div class="reponse-div">
-          <div class="copy-word" title="Copy To Clipboard" ngxClipboard [cbContent]="mettreAJou4"></div>
+          <div class="copy-word" title="Copy To Clipboard" ngxClipboard [cbContent]="mettreAJou4" (click)="showCustom()"></div>
           {{mettreAJou4}}
         </div>
         <div class="reponse-div">
-          <div class="copy-word" title="Copy To Clipboard" ngxClipboard [cbContent]="mettreAJour"></div>
+          <div class="copy-word" title="Copy To Clipboard" ngxClipboard [cbContent]="mettreAJour" (click)="showCustom()"></div>
           {{mettreAJour}}
         </div>
         <div class="alert-div margin-top">$set est utilisé pour modifier certain attributs d'un record de la collection.
@@ -356,38 +356,38 @@
         <div class="margin-top title-bigger-div">Pour remplacer le record avec un autre representant par l'obj JSON
         </div>
         <div class="reponse-div">
-          <div class="copy-word" title="Copy To Clipboard" ngxClipboard [cbContent]="mettreAJour2"></div>
+          <div class="copy-word" title="Copy To Clipboard" ngxClipboard [cbContent]="mettreAJour2" (click)="showCustom()"></div>
           {{mettreAJour2}}
         </div>
         <div class="margin-top title-bigger-div">Pour mettre a jour tous les records ayant cette condition</div>
         <div class="reponse-div">
-          <div class="copy-word" title="Copy To Clipboard" ngxClipboard [cbContent]="mettreAJou3"></div>
+          <div class="copy-word" title="Copy To Clipboard" ngxClipboard [cbContent]="mettreAJou3" (click)="showCustom()"></div>
           {{mettreAJou3}}
         </div>
 
         <div class="subtitle-div">Statistiques d'une collection</div>
         <div class="reponse-div">
-          <div class="copy-word" title="Copy To Clipboard" ngxClipboard [cbContent]="'db.(nom collection).stats()'"></div>
+          <div class="copy-word" title="Copy To Clipboard" ngxClipboard [cbContent]="'db.(nom collection).stats()'" (click)="showCustom()"></div>
           db.(nom collection).stats()
         </div>
         <div class="reponse-div">
-          <div class="copy-word" title="Copy To Clipboard" ngxClipboard [cbContent]="'db.(nom collection).latencyStats()'"></div>
+          <div class="copy-word" title="Copy To Clipboard" ngxClipboard [cbContent]="'db.(nom collection).latencyStats()'" (click)="showCustom()"></div>
           db.(nom collection).latencyStats()
         </div>
         <div class="reponse-div">
-          <div class="copy-word" title="Copy To Clipboard" ngxClipboard [cbContent]="'db.(nom collection).dataSize()'"></div>
+          <div class="copy-word" title="Copy To Clipboard" ngxClipboard [cbContent]="'db.(nom collection).dataSize()'" (click)="showCustom()"></div>
           db.(nom collection).dataSize()
         </div>
         <div class="reponse-div">
-          <div class="copy-word" title="Copy To Clipboard" ngxClipboard [cbContent]="'db.(nom collection).storageSize()'"></div>
+          <div class="copy-word" title="Copy To Clipboard" ngxClipboard [cbContent]="'db.(nom collection).storageSize()'" (click)="showCustom()"></div>
           db.(nom collection).storageSize()
         </div>
         <div class="reponse-div">
-          <div class="copy-word" title="Copy To Clipboard" ngxClipboard [cbContent]="'db.(nom collection).totalSize()'"></div>
+          <div class="copy-word" title="Copy To Clipboard" ngxClipboard [cbContent]="'db.(nom collection).totalSize()'" (click)="showCustom()"></div>
           db.(nom collection).totalSize()
         </div>
         <div class="reponse-div">
-          <div class="copy-word" title="Copy To Clipboard" ngxClipboard [cbContent]="'db.(nom collection).totalIndexSize()'"></div>
+          <div class="copy-word" title="Copy To Clipboard" ngxClipboard [cbContent]="'db.(nom collection).totalIndexSize()'" (click)="showCustom()"></div>
           db.(nom collection).totalIndexSize()
         </div>
         <div class="example-image-div margin-top"><img style="width: 100%" src="assets/images/mongo-images/stats.png">
@@ -463,12 +463,12 @@
         </div>
         <div class="margin-top title-bigger-div">Pour créer un index</div>
         <div class="margin-top reponse-div">
-          <div class="copy-word" title="Copy To Clipboard" ngxClipboard [cbContent]="exempleIndex1"></div>
+          <div class="copy-word" title="Copy To Clipboard" ngxClipboard [cbContent]="exempleIndex1" (click)="showCustom()"></div>
           {{exempleIndex1}}
         </div>
         <div class="margin-top title-bigger-div">Pour créer un index et préciser que la valeur doit être unique</div>
         <div class="margin-top reponse-div">
-          <div class="copy-word" title="Copy To Clipboard" ngxClipboard [cbContent]="exempleIndex2"></div>
+          <div class="copy-word" title="Copy To Clipboard" ngxClipboard [cbContent]="exempleIndex2" (click)="showCustom()"></div>
           {{exempleIndex2}}
         </div>
         <div class="margin-top">
@@ -486,12 +486,12 @@
         </div>
         <div class="subtitle-div-small">Pour afficher les index d'une collection</div>
         <div class="margin-top reponse-div">
-          <div class="copy-word" title="Copy To Clipboard" ngxClipboard [cbContent]="exempleIndex4"></div>
+          <div class="copy-word" title="Copy To Clipboard" ngxClipboard [cbContent]="exempleIndex4" (click)="showCustom()"></div>
           {{exempleIndex4}}
         </div>
         <div class="subtitle-div-small">Pour supprimer un index (le nom de l'index est fourni par getIndexes)</div>
         <div class="margin-top reponse-div">
-          <div class="copy-word" title="Copy To Clipboard" ngxClipboard [cbContent]="exempleIndex5"></div>
+          <div class="copy-word" title="Copy To Clipboard" ngxClipboard [cbContent]="exempleIndex5" (click)="showCustom()"></div>
           {{exempleIndex5}}
         </div>
         <div class="subtitle-div-small">Pour supprimer tous les indexes d'une collection</div>
@@ -501,7 +501,7 @@
         </div>
         <div class="subtitle-div-small">Pour supprimer tous les indexes de la base</div>
         <div class="margin-top reponse-div">
-          <div class="copy-word" title="Copy To Clipboard" ngxClipboard [cbContent]="exempleIndex7"></div>
+          <div class="copy-word" title="Copy To Clipboard" ngxClipboard [cbContent]="exempleIndex7" (click)="showCustom()"></div>
           {{exempleIndex7}}
         </div>
         <div class="subtitle-div-bigger">Les Projections</div>
@@ -532,12 +532,12 @@
           Pour un ordre descendant)
         </div>
         <div class="margin-top reponse-div">
-          <div class="copy-word" title="Copy To Clipboard" ngxClipboard [cbContent]="sortExemple1"></div>
+          <div class="copy-word" title="Copy To Clipboard" ngxClipboard [cbContent]="sortExemple1" (click)="showCustom()"></div>
           {{sortExemple1}}
         </div>
         <div class="subtitle-div-small">sort dans les options de la commande find()</div>
         <div class="margin-top reponse-div">
-          <div class="copy-word" title="Copy To Clipboard" ngxClipboard [cbContent]="sortExemple2"></div>
+          <div class="copy-word" title="Copy To Clipboard" ngxClipboard [cbContent]="sortExemple2" (click)="showCustom()"></div>
           {{sortExemple2}}
         </div>
         <div class="subtitle-div-bigger">La Limitation des Resultats</div>
@@ -549,12 +549,12 @@
         </div>
         <div class="subtitle-div-small">Pour limiter les documents retourneés à 5.</div>
         <div class="margin-top reponse-div">
-          <div class="copy-word" title="Copy To Clipboard" ngxClipboard [cbContent]="limitExample1"></div>
+          <div class="copy-word" title="Copy To Clipboard" ngxClipboard [cbContent]="limitExample1" (click)="showCustom()"></div>
           {{limitExample1}}
         </div>
         <div class="subtitle-div-small">limit dans les options de la commande find().</div>
         <div class="margin-top reponse-div">
-          <div class="copy-word" title="Copy To Clipboard" ngxClipboard [cbContent]="limitExample2"></div>
+          <div class="copy-word" title="Copy To Clipboard" ngxClipboard [cbContent]="limitExample2" (click)="showCustom()"></div>
           {{limitExample2}}
         </div>
       </div>
@@ -584,27 +584,27 @@
         </div>
         <div class="subtitle-div margin-top">$gt :</div>
         <div>plus grand que</div>
-        <div class="reponse-div"><div class="copy-word" title="Copy To Clipboard" ngxClipboard [cbContent]="gt"></div>{{gt}}</div>
+        <div class="reponse-div"><div class="copy-word" title="Copy To Clipboard" ngxClipboard [cbContent]="gt" (click)="showCustom()"></div>{{gt}}</div>
 
         <div class="subtitle-div">$lt :</div>
         <div>plus petit que</div>
-        <div class="reponse-div"><div class="copy-word" title="Copy To Clipboard" ngxClipboard [cbContent]="lt"></div>{{lt}}</div>
+        <div class="reponse-div"><div class="copy-word" title="Copy To Clipboard" ngxClipboard [cbContent]="lt" (click)="showCustom()"></div>{{lt}}</div>
 
         <div class="subtitle-div">$gte :</div>
         <div>plus grand ou égal à</div>
-        <div class="reponse-div"><div class="copy-word" title="Copy To Clipboard" ngxClipboard [cbContent]="gte"></div>{{gte}}</div>
+        <div class="reponse-div"><div class="copy-word" title="Copy To Clipboard" ngxClipboard [cbContent]="gte" (click)="showCustom()"></div>{{gte}}</div>
 
         <div class="subtitle-div">$lte :</div>
         <div>plus petit ou égal à</div>
-        <div class="reponse-div"><div class="copy-word" title="Copy To Clipboard" ngxClipboard [cbContent]="lte"></div>{{lte}}</div>
+        <div class="reponse-div"><div class="copy-word" title="Copy To Clipboard" ngxClipboard [cbContent]="lte" (click)="showCustom()"></div>{{lte}}</div>
 
         <div class="subtitle-div">$eq :</div>
         <div>égal à</div>
-        <div class="reponse-div"><div class="copy-word" title="Copy To Clipboard" ngxClipboard [cbContent]="eg"></div>{{eg}}</div>
+        <div class="reponse-div"><div class="copy-word" title="Copy To Clipboard" ngxClipboard [cbContent]="eg" (click)="showCustom()"></div>{{eg}}</div>
 
         <div class="subtitle-div">$ne :</div>
         <div>non égal à</div>
-        <div class="reponse-div"><div class="copy-word" title="Copy To Clipboard" ngxClipboard [cbContent]="neg"></div>{{neg}}</div>
+        <div class="reponse-div"><div class="copy-word" title="Copy To Clipboard" ngxClipboard [cbContent]="neg" (click)="showCustom()"></div>{{neg}}</div>
 
         <div class="margin-top alert-div">
           Les 6 opérandes ci-dessus fonctionnent pour des nombres et des chaines de caractères. Pour les chaines de
@@ -618,19 +618,19 @@
         </div>
         <div class="subtitle-div margin-top">$or :</div>
         <div>pour récupérer les documents qui correspondent à 2 critères différents</div>
-        <div class="reponse-div"><div class="copy-word" title="Copy To Clipboard" ngxClipboard [cbContent]="or"></div>{{or}}</div>
+        <div class="reponse-div"><div class="copy-word" title="Copy To Clipboard" ngxClipboard [cbContent]="or" (click)="showCustom()"></div>{{or}}</div>
 
         <div class="subtitle-div">$and:</div>
         <div>pour cumuler des critères</div>
-        <div class="reponse-div"><div class="copy-word" title="Copy To Clipboard" ngxClipboard [cbContent]="and"></div>{{and}}</div>
+        <div class="reponse-div"><div class="copy-word" title="Copy To Clipboard" ngxClipboard [cbContent]="and" (click)="showCustom()"></div>{{and}}</div>
 
         <div class="subtitle-div">$not :</div>
         <div>pour reverser la condition</div>
-        <div class="reponse-div"><div class="copy-word" title="Copy To Clipboard" ngxClipboard [cbContent]="not"></div>{{not}}</div>
+        <div class="reponse-div"><div class="copy-word" title="Copy To Clipboard" ngxClipboard [cbContent]="not" (click)="showCustom()"></div>{{not}}</div>
 
         <div class="subtitle-div">$nor :</div>
         <div>pour obtenir la condition logique NOR</div>
-        <div class="reponse-div"><div class="copy-word" title="Copy To Clipboard" ngxClipboard [cbContent]="nor"></div>{{nor}}</div>
+        <div class="reponse-div"><div class="copy-word" title="Copy To Clipboard" ngxClipboard [cbContent]="nor" (click)="showCustom()"></div>{{nor}}</div>
 
         <div class="subtitle-div-bigger">
           <ul>
@@ -640,11 +640,11 @@
 
         <div class="subtitle-div margin-top">$exist :</div>
         <div>pour récuperer les documents qui ont le critère qui existe et non null</div>
-        <div class="reponse-div"><div class="copy-word" title="Copy To Clipboard" ngxClipboard [cbContent]="exists"></div>{{exists}}</div>
+        <div class="reponse-div"><div class="copy-word" title="Copy To Clipboard" ngxClipboard [cbContent]="exists" (click)="showCustom()"></div>{{exists}}</div>
 
         <div class="subtitle-div">$type :</div>
         <div>pour récuperer les documents qui ont le critère correspondant à un type donné</div>
-        <div class="reponse-div"><div class="copy-word" title="Copy To Clipboard" ngxClipboard [cbContent]="type"></div>{{type}}</div>
+        <div class="reponse-div"><div class="copy-word" title="Copy To Clipboard" ngxClipboard [cbContent]="type" (click)="showCustom()"></div>{{type}}</div>
 
         <div class="subtitle-div-small">
           Les Types disponibles dans Mongo DB sont:
@@ -659,7 +659,7 @@
         </div>
         <div class="subtitle-div">$regex :</div>
         <div>pour récuperer les documents qui ont le critère correspondant à l'expression régulière donnée</div>
-        <div class="reponse-div"><div class="copy-word" title="Copy To Clipboard" ngxClipboard [cbContent]="regex"></div>{{regex}}</div>
+        <div class="reponse-div"><div class="copy-word" title="Copy To Clipboard" ngxClipboard [cbContent]="regex" (click)="showCustom()"></div>{{regex}}</div>
 
         <div class="subtitle-div-bigger">
           <ul>
@@ -668,24 +668,24 @@
         </div>
         <div class="subtitle-div">$in :</div>
         <div>pour récuperer les documents parmi le tableau des valeurs</div>
-        <div class="reponse-div"><div class="copy-word" title="Copy To Clipboard" ngxClipboard [cbContent]="inCritere"></div>{{inCritere}}</div>
+        <div class="reponse-div"><div class="copy-word" title="Copy To Clipboard" ngxClipboard [cbContent]="inCritere" (click)="showCustom()"></div>{{inCritere}}</div>
 
         <div class="subtitle-div">$nin :</div>
         <div>pour récuperer tous les documents sauf ceux parmi le tableau des valeurs<</div>
-        <div class="reponse-div"><div class="copy-word" title="Copy To Clipboard" ngxClipboard [cbContent]="ninCritere"></div>{{ninCritere}}</div>
+        <div class="reponse-div"><div class="copy-word" title="Copy To Clipboard" ngxClipboard [cbContent]="ninCritere" (click)="showCustom()"></div>{{ninCritere}}</div>
 
         <div class="subtitle-div">$all :</div>
         <div>pour cumuler des critères correspondant au tableau des valeurs.</div>
-        <div class="reponse-div"><div class="copy-word" title="Copy To Clipboard" ngxClipboard [cbContent]="all"></div>{{all}}</div>
+        <div class="reponse-div"><div class="copy-word" title="Copy To Clipboard" ngxClipboard [cbContent]="all" (click)="showCustom()"></div>{{all}}</div>
         <div class="alert-div margin-top">
           Cet operand resssemble à l'operand $and mais avec les mêmes critères, par exemple:
         </div>
-        <div class="reponse-div"><div class="copy-word" title="Copy To Clipboard" ngxClipboard [cbContent]="allSimilar"></div>
+        <div class="reponse-div"><div class="copy-word" title="Copy To Clipboard" ngxClipboard [cbContent]="allSimilar" (click)="showCustom()"></div>
           {{allSimilar}}
         </div>
         <div class="subtitle-div">$size :</div>
         <div>pour retourner les records dont la liste correspond à une size donnée</div>
-        <div class="reponse-div"><div class="copy-word" title="Copy To Clipboard" ngxClipboard [cbContent]="size"></div>{{size}}</div>
+        <div class="reponse-div"><div class="copy-word" title="Copy To Clipboard" ngxClipboard [cbContent]="size" (click)="showCustom()"></div>{{size}}</div>
 
         <div class="subtitle-div-bigger">Opérandes de "Update</div>
         <div class="subtitle-div-bigger margin-top">
@@ -697,21 +697,21 @@
         <div>pour mettre à jour la valeur du champ avec la valeur spécifiée si celle-ci est inférieure à la valeur
           actuelle du champ.
         </div>
-        <div class="reponse-div"><div class="copy-word" title="Copy To Clipboard" ngxClipboard [cbContent]="min"></div>{{min}}</div>
+        <div class="reponse-div"><div class="copy-word" title="Copy To Clipboard" ngxClipboard [cbContent]="min" (click)="showCustom()"></div>{{min}}</div>
 
         <div class="subtitle-div">$max :</div>
         <div>pour mettre à jour la valeur du champ avec la valeur spécifiée si celle-ci est supérieure à la valeur
           actuelle du champ.
         </div>
-        <div class="reponse-div"><div class="copy-word" title="Copy To Clipboard" ngxClipboard [cbContent]="max"></div>{{max}}</div>
+        <div class="reponse-div"><div class="copy-word" title="Copy To Clipboard" ngxClipboard [cbContent]="max" (click)="showCustom()"></div>{{max}}</div>
 
         <div class="subtitle-div">$set :</div>
         <div>pour remplacer la valeur d'un champ par la valeur spécifiée.</div>
-        <div class="reponse-div"><div class="copy-word" title="Copy To Clipboard" ngxClipboard [cbContent]="set"></div>{{set}}</div>
+        <div class="reponse-div"><div class="copy-word" title="Copy To Clipboard" ngxClipboard [cbContent]="set" (click)="showCustom()"></div>{{set}}</div>
 
         <div class="subtitle-div">$unset :</div>
         <div>pour supprimer un champ particulier.</div>
-        <div class="reponse-div"><div class="copy-word" title="Copy To Clipboard" ngxClipboard [cbContent]="unset"></div>{{unset}}</div>
+        <div class="reponse-div"><div class="copy-word" title="Copy To Clipboard" ngxClipboard [cbContent]="unset" (click)="showCustom()"></div>{{unset}}</div>
 
         <div class="subtitle-div-bigger">
           <ul>
@@ -724,23 +724,23 @@
           valeur de -1 pour supprimer le premier élément d'un tableau et 1 pour supprimer le dernier élément d'un
           tableau.
         </div>
-        <div class="reponse-div"><div class="copy-word" title="Copy To Clipboard" ngxClipboard [cbContent]="pop"></div>{{pop}}</div>
+        <div class="reponse-div"><div class="copy-word" title="Copy To Clipboard" ngxClipboard [cbContent]="pop" (click)="showCustom()"></div>{{pop}}</div>
 
         <div class="subtitle-div">$pull :</div>
         <div>pour supprimer d'un tableau existant toutes les occurrences d'une valeur ou de
           valeurs correspondant à une condition spécifiée.
         </div>
-        <div class="reponse-div"><div class="copy-word" title="Copy To Clipboard" ngxClipboard [cbContent]="pull"></div>{{pull}}</div>
+        <div class="reponse-div"><div class="copy-word" title="Copy To Clipboard" ngxClipboard [cbContent]="pull" (click)="showCustom()"></div>{{pull}}</div>
 
         <div class="subtitle-div">$push :</div>
         <div>pour ajouter une valeur spécifiée à un tableau.</div>
-        <div class="reponse-div"><div class="copy-word" title="Copy To Clipboard" ngxClipboard [cbContent]="push"></div>{{push}}</div>
+        <div class="reponse-div"><div class="copy-word" title="Copy To Clipboard" ngxClipboard [cbContent]="push" (click)="showCustom()"></div>{{push}}</div>
 
         <div class="subtitle-div">$addToSet :</div>
         <div>pour ajouter une valeur à un tableau sauf si la valeur est déjà présente,
           auquel cas $ addToSet ne fait rien pour ce tableau.
         </div>
-        <div class="reponse-div"><div class="copy-word" title="Copy To Clipboard" ngxClipboard [cbContent]="addToSet"></div>{{addToSet}}</div>
+        <div class="reponse-div"><div class="copy-word" title="Copy To Clipboard" ngxClipboard [cbContent]="addToSet" (click)="showCustom()"></div>{{addToSet}}</div>
 
         <div class="subtitle-div-bigger">
           <ul>
@@ -752,7 +752,7 @@
         <div>Le modificateur $ each est disponible pour une utilisation avec l'opérateur $
           addToSet et l'opérateur $ push.
         </div>
-        <div class="reponse-div"><div class="copy-word" title="Copy To Clipboard" ngxClipboard [cbContent]="each"></div>{{each}}</div>
+        <div class="reponse-div"><div class="copy-word" title="Copy To Clipboard" ngxClipboard [cbContent]="each" (click)="showCustom()"></div>{{each}}</div>
       </div>
     </ng-container>
     <ng-container *ngIf="route=='tutorial6'">
@@ -865,7 +865,7 @@
           des documents d'entrée et un champ des documents de
           la collection «jointe», l'étape $ lookup a la syntaxe suivante:
         </div>
-        <div class="margin-top reponse-div"><div class="copy-word" title="Copy To Clipboard" ngxClipboard [cbContent]="lookupExemple"></div>
+        <div class="margin-top reponse-div"><div class="copy-word" title="Copy To Clipboard" ngxClipboard [cbContent]="lookupExemple" (click)="showCustom()"></div>
           {{lookupExemple}}
         </div>
         <div class="margin-top exemple-div">
@@ -1133,11 +1133,11 @@
           Pour les executer il faut ouvrir une nouvelle fenetre de commande
         </div>
         <div class="reponse-div">
-          <div class="copy-word" title="Copy To Clipboard" ngxClipboard [cbContent]="'mongodump --host localhost --port 27017 --d (Nom de base de données) --o (Nom du fichier pour exporter les données)'"></div>
+          <div (click)="showCustom()" class="copy-word" title="Copy To Clipboard" ngxClipboard [cbContent]="'mongodump --host localhost --port 27017 --d (Nom de base de données) --o (Nom du fichier pour exporter les données)'"></div>
           mongodump --host localhost --port 27017 --d (Nom de base de données) --o (Nom du fichier pour exporter les données)
         </div>
         <div class="reponse-div">
-          <div class="copy-word" title="Copy To Clipboard" ngxClipboard [cbContent]="'mongorestore --host localhost --d (Nom de base de données) (le path du fichier contenant les données exportés)'"></div>
+          <div  (click)="showCustom()" class="copy-word" title="Copy To Clipboard" ngxClipboard [cbContent]="'mongorestore --host localhost --d (Nom de base de données) (le path du fichier contenant les données exportés)'"></div>
           mongorestore --host localhost --d (Nom de base de données) (le path du fichier contenant les données exportés)
         </div>
         <div class="margin-top title-bigger-div">
@@ -1155,12 +1155,12 @@
           Pour les executer il faut ouvrir une nouvelle fenetre de commande
         </div>
         <div class="reponse-div">
-          <div class="copy-word" title="Copy To Clipboard" ngxClipboard [cbContent]="'mongoimport --d (Nom de base de donnée) --c (nom de la collection --file (path du fichier JSON).json'"></div>
+          <div (click)="showCustom()" class="copy-word" title="Copy To Clipboard" ngxClipboard [cbContent]="'mongoimport --d (Nom de base de donnée) --c (nom de la collection --file (path du fichier JSON).json'"></div>
           mongoimport --d (Nom de base de donnée) --c (nom de la collection --file (path du fichier
             JSON).json
         </div>
         <div class="reponse-div">
-          <div class="copy-word" title="Copy To Clipboard" ngxClipboard [cbContent]="'mongoexport --d (Nom de base de donnée) --c (nom de la collection) --o (npm du ficher).json'"></div>
+          <div (click)="showCustom()" class="copy-word" title="Copy To Clipboard" ngxClipboard [cbContent]="'mongoexport --d (Nom de base de donnée) --c (nom de la collection) --o (npm du ficher).json'"></div>
           mongoexport --d (Nom de base de donnée) --c (nom de la collection) --o (npm du ficher).json</div>
       </div>
     </ng-container>

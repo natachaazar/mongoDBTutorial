@@ -196,3 +196,24 @@ textarea{
     padding-inline-start: 0 !important;
   }
 }
+
+#toast-container > div {
+  opacity:1;
+}
+.toast-info{
+  background-color:#499b45 !important;
+  background-image: none !important;
+}
+.toast-message{
+  color: black !important;
+}
+.toast-title{
+  color: black !important;
+  font-size: 15px !important
+}
+.toast-container .toast{
+  width: 170px !important;
+  padding: 15px !important;
+  margin:0 !important;
+  text-align: center !important;
+}

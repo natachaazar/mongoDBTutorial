@@ -1,4 +1,5 @@
 import {Component, OnInit} from '@angular/core';
+import { ToastrService } from 'ngx-toastr'
 
 @Component({
   selector: 'app-tutorial',
@@ -291,7 +292,7 @@ export class TutorialComponent implements OnInit {
   createDB = 'db.createCollection("Nom Collection")';
   renommerColl = 'db.(nom collection).renameCollection("nouveau nom")';
 
-  constructor() {
+  constructor(private toastr: ToastrService) {
   }
 
   ngOnInit() {
@@ -302,5 +303,9 @@ export class TutorialComponent implements OnInit {
     window.scrollTo(0, 0);
     this.route = section.route;
     console.log('routee', this.route);
+  }
+
+  showCustom() {
+    this.toastr.info(null,'Copie réussie');
   }
 }
