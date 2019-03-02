@@ -14,6 +14,8 @@ export class SidebarComponent implements OnInit{
 	constructor() {}
 
 	ngOnInit() {
+    this.resetSelect();
+    this.sideBar[0].selected = true;
     this.eventEmitter.emit(this.sideBar[0]);
 	}
 

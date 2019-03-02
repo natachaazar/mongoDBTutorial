@@ -9,6 +9,7 @@ import { ToastrService } from 'ngx-toastr'
 export class TutorialComponent implements OnInit {
 
   route: string;
+  showLoading=false;
   exemple1: string = '{nom: "Her", acteurs: [{nom: "Johansson", prenom: "Scarlett"}, {nom: "Phoenix", prenom: "Joaquim"}]}';
   exemple2: string = '{nom: "Avengers", acteurs : [{nom: "Johansson", prenom: "Scarlett"}]}';
   exemple3: string = '{\n' +
@@ -296,13 +297,15 @@ export class TutorialComponent implements OnInit {
   }
 
   ngOnInit() {
-    console.log('tutorial here');
   }
 
   onChangeSection(section) {
+    this.showLoading = true;
     window.scrollTo(0, 0);
-    this.route = section.route;
-    console.log('routee', this.route);
+    setTimeout(() => {
+      this.route = section.route;
+      this.showLoading = false;
+    }, 400);
   }
 
   showCustom() {

@@ -5,7 +5,6 @@ import { AppComponent } from './app.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {SharedModule} from "./modules/shared/shared.module";
 import {ToastrModule } from 'ngx-toastr';
-
 @NgModule({
   declarations: [
     AppComponent
